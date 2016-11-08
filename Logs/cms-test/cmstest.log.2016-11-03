@@ -1,0 +1,257 @@
+[ INFO] [2016-11-03 15:25:22 663] (LoginPage.java:24) init the class...
+[ INFO] [2016-11-03 15:27:51 276] (LoginPage.java:24) init the class...
+[ INFO] [2016-11-03 20:07:31 037] (LoadPageViaPageSource.java:30) page loaded
+[ INFO] [2016-11-03 20:07:31 069] (LoginPage.java:26) init the class...
+[ INFO] [2016-11-03 20:27:49 536] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-03 20:27:49 536] (LogUtil.java:11) ---------------------- SET UP Start -------------------------
+[ INFO] [2016-11-03 20:27:56 833] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-03 20:27:56 833] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-03 20:27:56 843] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-03 20:27:56 843] (LogUtil.java:11) ---------------------- testLogin Start -------------------------
+[ INFO] [2016-11-03 20:27:57 103] (LoadPageViaPageSource.java:30) Page loaded ...
+[ INFO] [2016-11-03 20:27:57 122] (LoginPage.java:29) init the class...
+[ INFO] [2016-11-03 20:27:58 054] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-03 20:27:58 054] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-03 20:27:58 056] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-03 20:27:58 056] (LogUtil.java:11) ---------------------- TEAR DOWN Start -------------------------
+[ INFO] [2016-11-03 20:28:00 792] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-03 20:28:00 792] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-03 20:29:39 862] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-03 20:29:39 866] (LogUtil.java:11) ---------------------- testLogin Start -------------------------
+[ INFO] [2016-11-03 20:29:40 157] (LoadPageViaPageSource.java:30) Page loaded ...
+[ INFO] [2016-11-03 20:29:40 178] (LoginPage.java:29) init the class...
+[ INFO] [2016-11-03 20:29:40 945] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-03 20:29:40 945] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-03 20:36:03 728] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-03 20:36:03 732] (LogUtil.java:11) ---------------------- testLogin Start -------------------------
+[ INFO] [2016-11-03 20:36:04 046] (LoadPageViaPageSource.java:30) Page loaded ...
+[ INFO] [2016-11-03 20:36:04 064] (LoginPage.java:29) init the class...
+[ INFO] [2016-11-03 20:36:04 883] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-03 20:36:05 013] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-03 20:36:05 129] (LoginPage.java:50) Login success.
+[ INFO] [2016-11-03 20:36:05 130] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-03 20:36:05 131] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-03 20:37:51 307] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-03 20:37:51 312] (LogUtil.java:11) ---------------------- testLogin Start -------------------------
+[ INFO] [2016-11-03 20:37:51 597] (LoadPageViaPageSource.java:30) Page loaded ...
+[ INFO] [2016-11-03 20:37:51 620] (LoginPage.java:27) Init the class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-03 20:37:52 266] (LoginPage.java:43) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-03 20:37:52 399] (LoginPage.java:45) Click the login button.
+[ INFO] [2016-11-03 20:37:52 428] (LoginPage.java:48) Login success.
+[ INFO] [2016-11-03 20:37:52 428] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-03 20:37:52 429] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-03 20:39:57 076] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-03 20:39:57 079] (LogUtil.java:11) ---------------------- testLogin Start -------------------------
+[ INFO] [2016-11-03 20:39:57 259] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-03 20:39:57 280] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-03 20:39:57 965] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-03 20:39:58 089] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-03 20:39:58 136] (LoginPage.java:50) Login success.
+[ INFO] [2016-11-03 20:39:58 136] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-03 20:39:58 137] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-03 20:48:16 551] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-03 20:48:16 554] (LogUtil.java:11) ---------------------- testLogin Start -------------------------
+[ INFO] [2016-11-03 20:48:16 736] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-03 20:48:16 754] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-03 20:48:17 379] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-03 20:48:17 588] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-03 20:48:17 639] (LoginPage.java:50) Login success.
+[ INFO] [2016-11-03 20:48:17 639] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-03 20:48:17 640] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-03 20:54:54 758] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-03 20:54:54 761] (LogUtil.java:11) ---------------------- testLogin Start -------------------------
+[ INFO] [2016-11-03 20:54:54 940] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-03 20:54:54 960] (LoginPage.java:30) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-03 20:54:55 566] (LoginPage.java:46) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-03 20:54:55 725] (LoginPage.java:48) Click the login button.
+[ INFO] [2016-11-03 20:54:55 813] (LoginPage.java:51) Login success.
+[ INFO] [2016-11-03 20:54:55 940] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-03 20:54:55 940] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-03 20:54:55 941] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-03 21:32:58 526] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-03 21:32:58 529] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-03 21:32:58 813] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-03 21:32:58 834] (LoginPage.java:30) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-03 21:32:59 800] (LoginPage.java:46) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-03 21:32:59 930] (LoginPage.java:48) Click the login button.
+[ INFO] [2016-11-03 21:32:59 982] (LoginPage.java:51) Login success.
+[ INFO] [2016-11-03 21:33:00 019] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-03 21:36:56 048] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-03 21:36:56 052] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-03 21:36:56 285] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-03 21:36:56 304] (LoginPage.java:30) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-03 21:36:56 956] (LoginPage.java:46) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-03 21:36:57 148] (LoginPage.java:48) Click the login button.
+[ INFO] [2016-11-03 21:36:57 202] (LoginPage.java:51) Login success.
+[ INFO] [2016-11-03 21:36:57 247] (LoadPageViaJsStatus.java:19) Page loaded.
+[ERROR] [2016-11-03 21:37:01 749] (PageObject.java:220) Can not find the subtag [项目批量录入].
+[ INFO] [2016-11-03 21:42:49 674] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-03 21:42:49 679] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-03 21:42:49 865] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-03 21:42:49 877] (LoginPage.java:30) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-03 21:42:50 493] (LoginPage.java:46) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-03 21:42:50 737] (LoginPage.java:48) Click the login button.
+[ INFO] [2016-11-03 21:42:50 811] (LoginPage.java:51) Login success.
+[ INFO] [2016-11-03 21:42:53 870] (LoadPageViaJsStatus.java:19) Page loaded.
+[ERROR] [2016-11-03 21:42:55 411] (PageObject.java:220) Can not find the subtag [项目批量录入].
+[ INFO] [2016-11-03 21:50:04 109] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-03 21:50:04 113] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-03 21:50:04 414] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-03 21:50:04 436] (LoginPage.java:30) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-03 21:50:05 131] (LoginPage.java:46) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-03 21:50:05 395] (LoginPage.java:48) Click the login button.
+[ INFO] [2016-11-03 21:52:42 459] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-03 21:52:42 464] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-03 21:52:42 904] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-03 21:52:42 942] (LoginPage.java:30) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-03 21:52:43 612] (LoginPage.java:46) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-03 21:52:43 855] (LoginPage.java:48) Click the login button.
+[ERROR] [2016-11-03 21:52:54 388] (PageObject.java:122) the method isPageSourceContainsDynamic load for string =[admin] timeout.
+[ INFO] [2016-11-03 21:53:46 960] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-03 21:53:46 963] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-03 21:53:47 141] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-03 21:53:47 156] (LoginPage.java:30) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-03 21:53:47 376] (LoginPage.java:46) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-03 21:53:47 500] (LoginPage.java:48) Click the login button.
+[ERROR] [2016-11-03 21:53:58 039] (PageObject.java:122) the method isPageSourceContainsDynamic load for string =[admin] timeout.
+[ INFO] [2016-11-03 21:54:34 352] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-03 21:54:34 355] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-03 21:54:34 712] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-03 21:54:34 733] (LoginPage.java:30) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-03 21:54:35 014] (LoginPage.java:46) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-03 21:54:35 140] (LoginPage.java:48) Click the login button.
+[ERROR] [2016-11-03 21:54:45 660] (PageObject.java:122) the method isPageSourceContainsDynamic load for string =[admin] timeout.
+[ INFO] [2016-11-03 21:55:37 646] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-03 21:55:37 651] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-03 21:55:38 040] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-03 21:55:38 065] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-03 21:55:38 659] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-03 21:55:38 799] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-03 21:55:38 833] (LoginPage.java:51) Login success.
+[ INFO] [2016-11-03 21:55:38 859] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-03 21:55:42 410] (PageObject.java:215) Click the subtag [项目批量录入].
+[ INFO] [2016-11-03 21:55:42 561] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-03 21:55:42 561] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-03 21:56:04 359] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-03 21:56:04 363] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-03 21:56:04 543] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-03 21:56:04 556] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-03 21:56:05 228] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-03 21:56:05 371] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-03 21:56:05 401] (LoginPage.java:51) Login success.
+[ INFO] [2016-11-03 21:56:05 483] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-03 21:56:09 125] (PageObject.java:215) Click the subtag [项目批量录入].
+[ INFO] [2016-11-03 21:56:09 271] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-03 21:56:09 272] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-03 22:01:42 297] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-03 22:01:42 302] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-03 22:01:42 541] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-03 22:01:42 559] (LoginPage.java:30) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-03 22:01:43 205] (LoginPage.java:46) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-03 22:01:43 324] (LoginPage.java:48) Click the login button.
+[ INFO] [2016-11-03 22:03:10 210] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-03 22:03:10 214] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-03 22:03:10 577] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-03 22:03:10 602] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-03 22:03:11 284] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-03 22:03:11 631] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-03 22:03:11 676] (LoginPage.java:51) pagesource:<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta charset="utf-8" />
+    <title>乐视金融交易平台--登录</title>
+    <link href="/static/css/login.css" type="text/css" rel="stylesheet" />
+    <script src="/static/js/modules/jquery-1.8.3.min.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="top">
+    <h1 class="logo"><img alt="乐视金融交易平台" src="/static/images/login-logo.png" /></h1>
+</div>
+
+<div style="height: 496px;" class="container">
+    <div class="formwrapper">
+
+        <form method="post" action="/login" class="form">
+            <p class="top-tip">
+                <span class="title">登录</span>
+                <span class="tip"></span>
+            </p>
+            <p>
+                <input type="text" name="systemLoginName" id="systemLoginName" class="ipt" placeholder="用户名" />
+            </p>
+            <p>
+                <input type="password" name="password" id="password" class="ipt" placeholder="密码" />
+            </p>
+            <p>
+                <input type="button" value="登录中..." id="submit_btn" />
+            </p>
+        </form>
+    </div>
+</div>
+
+<div style="" class="footer">
+    <p>乐视金融 版权所有</p>
+</div>
+<script type="text/javascript">
+    $(window).on("resize", function(){
+        $(".container").height($(window).height()-$(".top").height()-$(".footer").height()).show().siblings(".footer").show();
+    }).resize();
+
+    function showTip(msg){
+        $(".tip").text(msg);
+    }
+
+    function handleSubmit(){
+        //确认
+        var params = {
+            systemLoginName : $("#systemLoginName").val(),
+            password : $("#password").val()
+        };
+        $("#submit_btn").val("登录中...");
+        jQuery.ajax({
+            type : "POST",
+            url : "/login",
+            data : params,
+            cache : false,
+            dataType : "text",
+
+            success:function(data) {
+                var jsonData = eval("(" + data + ")");
+                if(jsonData.result == "SUCCESS") {
+                    window.location.href="/";
+                }else if(jsonData.result == "UPDATEPWD") {
+                    window.location.href="/systemUser/goToUpdatePasswordPage/"
+                }else {
+                    showTip(jsonData.message);
+                    $("#submit_btn").val("登录");
+                }
+            }
+        })
+    }
+    $("#submit_btn").on("click", handleSubmit);
+
+    $("form input").on("keyup", function(event){
+        var ev = event||window.event;
+        var keycode = ev.keyCode || ev.which;
+        if(keycode==13){
+            handleSubmit();
+        }
+    })
+
+
+
+</script>
+
+
+
+
+
+ </body></html>
+[ INFO] [2016-11-03 22:03:11 677] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-03 22:03:11 721] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-03 22:03:13 831] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-03 22:03:14 911] (PageObject.java:229) Click the tag [[[FirefoxDriver: firefox on WINDOWS (05f41471-f5b2-4df4-a669-8e09b7ef313d)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-03 22:03:15 199] (PageObject.java:215) Click the subtag [项目批量录入].
+[ INFO] [2016-11-03 22:03:15 336] (PageObject.java:232) Click the tag [[[FirefoxDriver: firefox on WINDOWS (05f41471-f5b2-4df4-a669-8e09b7ef313d)] -> xpath: //*[@id="rootNode"]/li[6]]] again.
+[ INFO] [2016-11-03 22:03:15 360] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-03 22:03:15 360] (LogUtil.java:16) ********************************************************************

@@ -1,0 +1,1745 @@
+[ INFO] [2016-11-04 10:25:49 096] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 10:25:49 101] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 10:25:49 291] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 10:25:49 311] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 10:25:49 975] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 10:25:50 217] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 10:25:50 489] (LoginPage.java:51) pagesource:<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta charset="utf-8" />
+    <title>乐视金融交易平台--登录</title>
+    <link href="/static/css/login.css" type="text/css" rel="stylesheet" />
+    <script src="/static/js/modules/jquery-1.8.3.min.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="top">
+    <h1 class="logo"><img alt="乐视金融交易平台" src="/static/images/login-logo.png" /></h1>
+</div>
+
+<div style="height: 496px;" class="container">
+    <div class="formwrapper">
+
+        <form method="post" action="/login" class="form">
+            <p class="top-tip">
+                <span class="title">登录</span>
+                <span class="tip"></span>
+            </p>
+            <p>
+                <input type="text" name="systemLoginName" id="systemLoginName" class="ipt" placeholder="用户名" />
+            </p>
+            <p>
+                <input type="password" name="password" id="password" class="ipt" placeholder="密码" />
+            </p>
+            <p>
+                <input type="button" value="登录中..." id="submit_btn" />
+            </p>
+        </form>
+    </div>
+</div>
+
+<div style="" class="footer">
+    <p>乐视金融 版权所有</p>
+</div>
+<script type="text/javascript">
+    $(window).on("resize", function(){
+        $(".container").height($(window).height()-$(".top").height()-$(".footer").height()).show().siblings(".footer").show();
+    }).resize();
+
+    function showTip(msg){
+        $(".tip").text(msg);
+    }
+
+    function handleSubmit(){
+        //确认
+        var params = {
+            systemLoginName : $("#systemLoginName").val(),
+            password : $("#password").val()
+        };
+        $("#submit_btn").val("登录中...");
+        jQuery.ajax({
+            type : "POST",
+            url : "/login",
+            data : params,
+            cache : false,
+            dataType : "text",
+
+            success:function(data) {
+                var jsonData = eval("(" + data + ")");
+                if(jsonData.result == "SUCCESS") {
+                    window.location.href="/";
+                }else if(jsonData.result == "UPDATEPWD") {
+                    window.location.href="/systemUser/goToUpdatePasswordPage/"
+                }else {
+                    showTip(jsonData.message);
+                    $("#submit_btn").val("登录");
+                }
+            }
+        })
+    }
+    $("#submit_btn").on("click", handleSubmit);
+
+    $("form input").on("keyup", function(event){
+        var ev = event||window.event;
+        var keycode = ev.keyCode || ev.which;
+        if(keycode==13){
+            handleSubmit();
+        }
+    })
+
+
+
+</script>
+
+
+
+
+
+ </body></html>
+[ INFO] [2016-11-04 10:25:50 491] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 10:25:54 445] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 10:25:54 661] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 10:25:55 099] (PageObject.java:229) Click the tag [[[FirefoxDriver: firefox on WINDOWS (ef638395-1eff-4934-a58c-be3437151d7b)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 10:25:55 462] (PageObject.java:215) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 10:25:55 578] (PageObject.java:232) Click the tag [[[FirefoxDriver: firefox on WINDOWS (ef638395-1eff-4934-a58c-be3437151d7b)] -> xpath: //*[@id="rootNode"]/li[6]]] again.
+[ INFO] [2016-11-04 10:25:55 615] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 10:25:55 616] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 10:31:49 133] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 10:31:49 136] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 10:31:49 317] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 10:31:49 336] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 10:31:50 071] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 10:31:50 214] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 10:31:52 361] (LoginPage.java:51) pagesource:<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+        <title>乐视金融交易平台</title>
+        <link href="/static/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="/static/js/modules/jquery-1.8.3.min.js" type="text/javascript"></script></head></html>
+[ INFO] [2016-11-04 10:31:52 362] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 10:31:53 287] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 10:31:53 443] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 10:31:53 784] (PageObject.java:229) Click the tag [[[FirefoxDriver: firefox on WINDOWS (8d10bd33-00c3-46c6-9a4b-0de232526174)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 10:31:54 110] (PageObject.java:215) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 10:31:54 133] (PageObject.java:55) the method clickElementWithJSE executed done with element = [[[FirefoxDriver: firefox on WINDOWS (8d10bd33-00c3-46c6-9a4b-0de232526174)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 10:31:54 134] (PageObject.java:233) Click the tag [[[FirefoxDriver: firefox on WINDOWS (8d10bd33-00c3-46c6-9a4b-0de232526174)] -> xpath: //*[@id="rootNode"]/li[6]]] again.
+[ INFO] [2016-11-04 10:31:54 163] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 10:31:54 164] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 10:39:57 413] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 10:39:57 415] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 10:39:57 590] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 10:39:57 607] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 10:39:58 224] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 10:39:58 384] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 10:39:58 430] (LoginPage.java:51) pagesource:<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta charset="utf-8" />
+    <title>乐视金融交易平台--登录</title>
+    <link href="/static/css/login.css" type="text/css" rel="stylesheet" />
+    <script src="/static/js/modules/jquery-1.8.3.min.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="top">
+    <h1 class="logo"><img alt="乐视金融交易平台" src="/static/images/login-logo.png" /></h1>
+</div>
+
+<div style="height: 496px;" class="container">
+    <div class="formwrapper">
+
+        <form method="post" action="/login" class="form">
+            <p class="top-tip">
+                <span class="title">登录</span>
+                <span class="tip"></span>
+            </p>
+            <p>
+                <input type="text" name="systemLoginName" id="systemLoginName" class="ipt" placeholder="用户名" />
+            </p>
+            <p>
+                <input type="password" name="password" id="password" class="ipt" placeholder="密码" />
+            </p>
+            <p>
+                <input type="button" value="登录中..." id="submit_btn" />
+            </p>
+        </form>
+    </div>
+</div>
+
+<div style="" class="footer">
+    <p>乐视金融 版权所有</p>
+</div>
+<script type="text/javascript">
+    $(window).on("resize", function(){
+        $(".container").height($(window).height()-$(".top").height()-$(".footer").height()).show().siblings(".footer").show();
+    }).resize();
+
+    function showTip(msg){
+        $(".tip").text(msg);
+    }
+
+    function handleSubmit(){
+        //确认
+        var params = {
+            systemLoginName : $("#systemLoginName").val(),
+            password : $("#password").val()
+        };
+        $("#submit_btn").val("登录中...");
+        jQuery.ajax({
+            type : "POST",
+            url : "/login",
+            data : params,
+            cache : false,
+            dataType : "text",
+
+            success:function(data) {
+                var jsonData = eval("(" + data + ")");
+                if(jsonData.result == "SUCCESS") {
+                    window.location.href="/";
+                }else if(jsonData.result == "UPDATEPWD") {
+                    window.location.href="/systemUser/goToUpdatePasswordPage/"
+                }else {
+                    showTip(jsonData.message);
+                    $("#submit_btn").val("登录");
+                }
+            }
+        })
+    }
+    $("#submit_btn").on("click", handleSubmit);
+
+    $("form input").on("keyup", function(event){
+        var ev = event||window.event;
+        var keycode = ev.keyCode || ev.which;
+        if(keycode==13){
+            handleSubmit();
+        }
+    })
+
+
+
+</script>
+
+
+
+
+
+ </body></html>
+[ INFO] [2016-11-04 10:39:58 430] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 10:39:58 445] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 10:40:00 521] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 10:40:01 661] (PageObject.java:229) Click the tag [[[FirefoxDriver: firefox on WINDOWS (35aff53b-b232-42b3-afbb-9680e8aaf2f6)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 10:40:01 756] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 10:40:01 756] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 10:44:58 055] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 10:44:58 058] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 10:44:58 367] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 10:44:58 391] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 10:44:58 641] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 10:44:58 759] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 10:44:58 779] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 10:44:58 804] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 10:45:00 902] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 10:45:01 925] (PageObject.java:229) Click the tag [[[FirefoxDriver: firefox on WINDOWS (a12eee01-fbfc-463c-bdb5-87807b394f11)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 10:45:02 074] (PageObject.java:237) element.getText()
+[ INFO] [2016-11-04 10:45:02 210] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 10:45:02 210] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 10:46:56 771] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 10:46:56 775] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 10:46:57 113] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 10:46:57 127] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 10:46:57 827] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 10:46:57 983] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 10:46:58 006] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 10:46:58 037] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 10:47:00 262] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 10:47:01 421] (PageObject.java:229) Click the tag [[[FirefoxDriver: firefox on WINDOWS (ec3b7f8c-8c89-4ae1-b3e2-d8c64f1fe57e)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 10:47:01 562] (PageObject.java:237) element.getText()
+[ INFO] [2016-11-04 10:47:01 714] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 10:47:01 714] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 10:49:50 508] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 10:49:50 513] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 10:49:50 859] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 10:49:50 890] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 10:49:51 473] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 10:49:51 615] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 10:49:51 638] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 10:49:51 667] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 10:49:53 849] (PageObject.java:228) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 10:49:54 875] (PageObject.java:230) Click the tag [[[FirefoxDriver: firefox on WINDOWS (15f89ffd-9096-4aad-906c-94b5a2bfdb40)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 10:49:55 083] (PageObject.java:240) element
+[ INFO] [2016-11-04 10:49:55 162] (PageObject.java:241) element.getText()
+[ INFO] [2016-11-04 10:49:55 264] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 10:49:55 265] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 10:51:57 221] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 10:51:57 224] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 10:51:57 544] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 10:51:57 564] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 10:51:57 793] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 10:51:57 930] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 10:51:57 952] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 10:51:57 982] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 10:52:00 072] (PageObject.java:228) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 10:52:01 216] (PageObject.java:230) Click the tag [[[FirefoxDriver: firefox on WINDOWS (0a0fc4dd-3d96-4c24-a6fc-2c517da95c0d)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 10:52:01 517] (PageObject.java:241) element
+[ INFO] [2016-11-04 10:52:01 587] (PageObject.java:242) element.getText()
+[ INFO] [2016-11-04 10:52:01 685] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 10:52:01 686] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 10:54:20 771] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 10:54:20 774] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 10:54:20 987] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 10:54:21 006] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 10:54:21 676] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 10:54:21 794] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 10:54:21 820] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 10:54:21 858] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 10:54:24 062] (PageObject.java:228) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 10:54:25 155] (PageObject.java:230) Click the tag [[[FirefoxDriver: firefox on WINDOWS (2cd28418-471f-41c4-b3be-994fa8c52186)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 10:54:25 515] (PageObject.java:243) element
+[ INFO] [2016-11-04 10:54:25 591] (PageObject.java:244) element.getText()
+[ INFO] [2016-11-04 10:54:25 692] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 10:54:25 693] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 10:57:37 178] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 10:57:37 180] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 10:57:37 480] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 10:57:37 507] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 10:57:38 263] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 10:57:38 500] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 10:57:38 531] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 10:57:38 561] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 10:57:40 670] (PageObject.java:228) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 10:57:41 844] (PageObject.java:230) Click the tag [[[FirefoxDriver: firefox on WINDOWS (95de1b8d-800f-40b8-b140-2a4244f80eed)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 10:57:42 215] (PageObject.java:243) element
+[ INFO] [2016-11-04 10:57:42 294] (PageObject.java:244) element.getText()
+[ INFO] [2016-11-04 10:57:43 456] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 10:57:43 456] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 11:10:39 150] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 11:10:39 154] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 11:10:39 330] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 11:10:39 348] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 11:10:39 561] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 11:10:39 681] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 11:10:39 713] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 11:10:39 742] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 11:10:41 981] (PageObject.java:228) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 11:10:43 046] (PageObject.java:230) Click the tag [[[FirefoxDriver: firefox on WINDOWS (65aae1eb-6590-4a54-a919-57e2c2e7ad5e)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 11:10:43 394] (PageObject.java:243) element[[[FirefoxDriver: firefox on WINDOWS (65aae1eb-6590-4a54-a919-57e2c2e7ad5e)] -> xpath: //*[@id="rootNode"]/li[6]]]
+[ INFO] [2016-11-04 11:10:43 484] (PageObject.java:244) element.getText[项目管理
+项目批量录入
+产品列表（大包列表）
+产品列表（大包审核）
+录入列表
+项目列表
+项目审核
+募集列表
+计息列表
+投后列表
+元产品管理
+产品展示包管理
+产品包装
+活期展示包管理]
+[ INFO] [2016-11-04 11:10:45 102] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 11:10:45 102] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 11:12:19 325] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 11:12:19 330] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 11:12:19 511] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 11:12:19 533] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 11:12:19 756] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 11:12:19 870] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 11:12:19 892] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 11:12:19 917] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 11:12:22 037] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 11:12:23 116] (PageObject.java:229) Click the tag [[[FirefoxDriver: firefox on WINDOWS (b319b428-3531-4c2d-932a-63b35c7b1479)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 11:12:23 155] (PageObject.java:237) element[[[FirefoxDriver: firefox on WINDOWS (b319b428-3531-4c2d-932a-63b35c7b1479)] -> xpath: //*[@id="rootNode"]/li[6]]]
+[ INFO] [2016-11-04 11:12:23 274] (PageObject.java:238) element.getText[项目管理
+项目批量录入
+产品列表（大包列表）
+产品列表（大包审核）
+录入列表
+项目列表
+项目审核
+募集列表
+计息列表
+投后列表
+元产品管理]
+[ INFO] [2016-11-04 11:12:24 842] (PageObject.java:55) The method clickElementWithJSE executed done with element = [[[FirefoxDriver: firefox on WINDOWS (b319b428-3531-4c2d-932a-63b35c7b1479)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 11:12:24 842] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 11:12:24 843] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 11:15:39 060] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 11:15:39 064] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 11:15:39 417] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 11:15:39 440] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 11:15:40 195] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 11:15:40 340] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 11:15:40 370] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 11:15:40 397] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 11:15:42 645] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 11:15:43 825] (PageObject.java:229) Click the tag [[[FirefoxDriver: firefox on WINDOWS (9b80a3d1-b0a1-46c6-9441-3ff5edabdfe4)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 11:15:43 870] (PageObject.java:237) element [[FirefoxDriver: firefox on WINDOWS (9b80a3d1-b0a1-46c6-9441-3ff5edabdfe4)] -> xpath: //*[@id="rootNode"]/li[6]]
+[ INFO] [2016-11-04 11:15:43 970] (PageObject.java:238) element.getText 项目管理
+项目批量录入
+产品列表（大包列表）
+产品列表（大包审核）
+录入列表
+项目列表
+项目审核
+募集列表
+计息列表
+投后列表
+产品展示包管理
+[ INFO] [2016-11-04 11:15:45 498] (PageObject.java:55) The method clickElementWithJSE executed done with element = [[[FirefoxDriver: firefox on WINDOWS (9b80a3d1-b0a1-46c6-9441-3ff5edabdfe4)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 11:15:45 499] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 11:15:45 499] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 11:17:06 176] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 11:17:06 180] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 11:17:06 525] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 11:17:06 554] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 11:17:07 240] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 11:17:07 396] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 11:17:07 419] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 11:17:07 443] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 11:17:09 572] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 11:17:10 734] (PageObject.java:229) Click the tag [[[FirefoxDriver: firefox on WINDOWS (3b6c31e3-6083-4e0c-a9c4-d63b382fc8dd)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 11:17:10 770] (PageObject.java:237) element [[FirefoxDriver: firefox on WINDOWS (3b6c31e3-6083-4e0c-a9c4-d63b382fc8dd)] -> xpath: //*[@id="rootNode"]/li[6]]
+[ INFO] [2016-11-04 11:17:10 871] (PageObject.java:238) element.getText 项目管理
+项目批量录入
+产品列表（大包列表）
+产品列表（大包审核）
+录入列表
+项目列表
+项目审核
+募集列表
+计息列表
+投后列表
+产品展示包管理
+[ INFO] [2016-11-04 11:17:12 448] (PageObject.java:55) The method clickElementWithJSE executed done with element = [[[FirefoxDriver: firefox on WINDOWS (3b6c31e3-6083-4e0c-a9c4-d63b382fc8dd)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 11:17:12 548] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 11:17:12 548] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 11:18:43 507] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 11:18:43 511] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 11:18:43 778] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 11:18:43 796] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 11:18:44 466] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 11:18:44 679] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 11:18:44 704] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 11:18:47 899] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 11:18:48 043] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 11:18:48 413] (PageObject.java:229) Click the tag [[[FirefoxDriver: firefox on WINDOWS (b58f6e7e-cc89-4fbd-8765-2c06d09472f8)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 11:18:48 464] (PageObject.java:237) element [[FirefoxDriver: firefox on WINDOWS (b58f6e7e-cc89-4fbd-8765-2c06d09472f8)] -> xpath: //*[@id="rootNode"]/li[6]]
+[ INFO] [2016-11-04 11:18:48 606] (PageObject.java:238) element.getText 项目管理
+项目批量录入
+产品列表（大包列表）
+产品列表（大包审核）
+录入列表
+项目列表
+项目审核
+募集列表
+计息列表
+[ INFO] [2016-11-04 11:18:51 639] (PageObject.java:55) The method clickElementWithJSE executed done with element = [[[FirefoxDriver: firefox on WINDOWS (b58f6e7e-cc89-4fbd-8765-2c06d09472f8)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 11:18:51 847] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 11:18:51 847] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 11:19:42 378] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 11:19:42 381] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 11:19:42 557] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 11:19:42 569] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 11:19:43 326] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 11:19:43 456] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 11:19:43 478] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 11:19:43 505] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 11:19:45 617] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 11:19:46 726] (PageObject.java:229) Click the tag [[[FirefoxDriver: firefox on WINDOWS (246b2b5f-cf42-4083-ac31-280a5e2b7a72)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 11:19:49 752] (PageObject.java:244) element [[FirefoxDriver: firefox on WINDOWS (246b2b5f-cf42-4083-ac31-280a5e2b7a72)] -> xpath: //*[@id="rootNode"]/li[6]]
+[ INFO] [2016-11-04 11:19:49 835] (PageObject.java:245) element.getText 项目管理
+项目批量录入
+产品列表（大包列表）
+产品列表（大包审核）
+录入列表
+项目列表
+项目审核
+募集列表
+计息列表
+投后列表
+产品展示包管理
+元产品管理
+产品包装
+活期展示包管理
+[ INFO] [2016-11-04 11:19:49 864] (PageObject.java:55) The method clickElementWithJSE executed done with element = [[[FirefoxDriver: firefox on WINDOWS (246b2b5f-cf42-4083-ac31-280a5e2b7a72)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 11:19:50 048] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 11:19:50 049] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 11:23:05 034] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 11:23:05 052] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 11:23:05 414] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 11:23:05 438] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 11:23:06 102] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 11:23:06 246] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 11:23:06 268] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 11:23:06 303] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 11:23:08 451] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 11:23:09 477] (PageObject.java:229) Click the tag [[[FirefoxDriver: firefox on WINDOWS (d475a628-457f-47f7-8680-cad40f8f5402)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 11:23:12 506] (PageObject.java:244) element [[FirefoxDriver: firefox on WINDOWS (d475a628-457f-47f7-8680-cad40f8f5402)] -> xpath: //*[@id="rootNode"]/li[6]]
+[ INFO] [2016-11-04 11:23:12 604] (PageObject.java:245) element.getText 项目管理
+项目批量录入
+产品列表（大包列表）
+产品列表（大包审核）
+录入列表
+项目列表
+项目审核
+募集列表
+计息列表
+投后列表
+产品展示包管理
+元产品管理
+产品包装
+活期展示包管理
+[ INFO] [2016-11-04 11:23:12 634] (PageObject.java:55) The method clickElementWithJSE executed done with element = [[[FirefoxDriver: firefox on WINDOWS (d475a628-457f-47f7-8680-cad40f8f5402)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 11:23:12 885] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 11:23:12 886] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 11:23:44 952] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 11:23:44 955] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 11:23:45 203] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 11:23:45 245] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 11:23:45 905] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 11:23:46 110] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 11:23:46 130] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 11:23:46 161] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 11:23:48 474] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 11:23:49 752] (PageObject.java:230) Click the tag [[[FirefoxDriver: firefox on WINDOWS (9aa5fe1c-4a60-4a66-aae8-ed3ab99f998f)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 11:23:52 778] (PageObject.java:245) element [[FirefoxDriver: firefox on WINDOWS (9aa5fe1c-4a60-4a66-aae8-ed3ab99f998f)] -> xpath: //*[@id="rootNode"]/li[6]]
+[ INFO] [2016-11-04 11:23:52 883] (PageObject.java:246) element.getText 项目管理
+项目批量录入
+产品列表（大包列表）
+产品列表（大包审核）
+录入列表
+项目列表
+项目审核
+募集列表
+计息列表
+投后列表
+产品展示包管理
+元产品管理
+产品包装
+活期展示包管理
+[ INFO] [2016-11-04 11:23:52 911] (PageObject.java:55) The method clickElementWithJSE executed done with element = [[[FirefoxDriver: firefox on WINDOWS (9aa5fe1c-4a60-4a66-aae8-ed3ab99f998f)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 11:23:53 095] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 11:23:53 096] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 11:26:55 997] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 11:26:56 004] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 11:26:56 333] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 11:26:56 356] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 11:26:56 619] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 11:26:56 766] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 11:26:56 792] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 11:26:56 817] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 11:26:59 021] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 11:27:00 244] (PageObject.java:230) Click the tag [[[FirefoxDriver: firefox on WINDOWS (eccf506f-18ac-4821-9602-ab4a319ac866)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 11:27:00 644] (PageObject.java:215) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 11:27:03 676] (PageObject.java:246) element [[FirefoxDriver: firefox on WINDOWS (eccf506f-18ac-4821-9602-ab4a319ac866)] -> xpath: //*[@id="rootNode"]/li[6]]
+[ INFO] [2016-11-04 11:27:03 760] (PageObject.java:247) element.getText 项目管理
+项目批量录入
+产品列表（大包列表）
+产品列表（大包审核）
+录入列表
+项目列表
+项目审核
+募集列表
+计息列表
+投后列表
+元产品管理
+产品展示包管理
+产品包装
+活期展示包管理
+[ INFO] [2016-11-04 11:27:03 785] (PageObject.java:55) The method clickElementWithJSE executed done with element = [[[FirefoxDriver: firefox on WINDOWS (eccf506f-18ac-4821-9602-ab4a319ac866)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 11:27:04 030] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 11:27:04 030] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 11:28:32 245] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 11:28:32 248] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 11:28:32 535] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 11:28:32 553] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 11:28:33 316] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 11:28:33 456] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 11:28:33 482] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 11:28:33 511] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 11:28:35 661] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 11:28:36 732] (PageObject.java:230) Click the tag [[[FirefoxDriver: firefox on WINDOWS (7d4aec02-b025-4f66-b467-c53bb7370354)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 11:28:37 060] (PageObject.java:215) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 11:28:40 092] (PageObject.java:246) element [[FirefoxDriver: firefox on WINDOWS (7d4aec02-b025-4f66-b467-c53bb7370354)] -> xpath: //*[@id="rootNode"]/li[6]/a]
+[ INFO] [2016-11-04 11:28:40 124] (PageObject.java:247) element.getText 项目管理
+[ INFO] [2016-11-04 11:28:40 242] (PageObject.java:55) The method clickElementWithJSE executed done with element = [[[FirefoxDriver: firefox on WINDOWS (7d4aec02-b025-4f66-b467-c53bb7370354)] -> xpath: //*[@id="rootNode"]/li[6]/a]].
+[ INFO] [2016-11-04 11:28:40 425] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 11:28:40 425] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 11:30:41 989] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 11:30:41 993] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 11:30:42 336] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 11:30:42 360] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 11:30:42 639] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 11:30:42 775] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 11:30:42 796] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 11:30:42 820] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 11:30:45 214] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 11:30:46 238] (PageObject.java:230) Click the tag [[[FirefoxDriver: firefox on WINDOWS (4f7dd74e-b5f0-4447-acae-22ef8864e6b9)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 11:30:46 492] (PageObject.java:215) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 11:30:49 527] (PageObject.java:246) element [[FirefoxDriver: firefox on WINDOWS (4f7dd74e-b5f0-4447-acae-22ef8864e6b9)] -> xpath: //*[@id="rootNode"]/li[6]/a]
+[ INFO] [2016-11-04 11:30:49 553] (PageObject.java:247) element.getText 项目管理
+[ INFO] [2016-11-04 11:30:49 654] (PageObject.java:55) The method clickElementWithJSE executed done with element = [[[FirefoxDriver: firefox on WINDOWS (4f7dd74e-b5f0-4447-acae-22ef8864e6b9)] -> xpath: //*[@id="rootNode"]/li[6]/a]].
+[ INFO] [2016-11-04 11:30:49 820] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 11:30:49 820] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 11:31:36 127] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 11:31:36 132] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 11:31:36 460] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 11:31:36 491] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 11:31:37 326] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 11:31:37 521] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 11:31:37 545] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 11:31:37 573] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 11:31:39 736] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 11:31:40 850] (PageObject.java:230) Click the tag [[[FirefoxDriver: firefox on WINDOWS (54593300-a6ef-4555-975b-853085e676f0)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 11:31:41 122] (PageObject.java:215) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 11:31:44 257] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 11:31:44 258] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 11:32:38 190] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 11:32:38 194] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 11:32:38 437] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 11:32:38 457] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 11:32:39 125] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 11:32:39 270] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 11:32:39 301] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 11:32:39 359] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 11:32:44 091] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 11:32:45 205] (PageObject.java:230) Click the tag [[[FirefoxDriver: firefox on WINDOWS (bc19637d-03da-472d-961a-e3106a27c62f)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 11:32:45 535] (PageObject.java:215) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 11:32:47 563] (PageObject.java:55) The method clickElementWithJSE executed done with element = [[[FirefoxDriver: firefox on WINDOWS (bc19637d-03da-472d-961a-e3106a27c62f)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 11:32:47 564] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 11:32:47 564] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 11:33:34 714] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 11:33:34 718] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 11:33:35 028] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 11:33:35 056] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 11:33:35 746] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 11:33:35 884] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 11:33:35 919] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 11:33:35 947] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 11:33:38 209] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 11:33:39 093] (PageObject.java:230) Click the tag [[[FirefoxDriver: firefox on WINDOWS (09899d30-eb35-4e5a-a6d5-221a93ea61d4)] -> xpath: //*[@id="rootNode"]/li[6]/a]].
+[ERROR] [2016-11-04 11:33:40 134] (PageObject.java:220) Can not find the subtag [项目批量录入].
+[ INFO] [2016-11-04 11:34:17 910] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 11:34:17 914] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 11:34:18 211] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 11:34:18 235] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 11:34:19 006] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 11:34:19 154] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 11:34:19 178] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 11:34:19 205] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 11:34:21 383] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 11:34:22 509] (PageObject.java:230) Click the tag [[[FirefoxDriver: firefox on WINDOWS (b132f5a0-fff1-4428-8319-21a09d99b7b2)] -> xpath: //*[@id="rootNode"]/li[6]/a]].
+[ERROR] [2016-11-04 11:34:23 543] (PageObject.java:220) Can not find the subtag [项目批量录入].
+[ INFO] [2016-11-04 11:35:38 375] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 11:35:38 379] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 11:35:38 636] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 11:35:38 657] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 11:35:39 461] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 11:35:39 598] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 11:35:39 621] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 11:35:39 652] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 11:35:41 829] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 11:35:42 911] (PageObject.java:230) Click the tag [[[FirefoxDriver: firefox on WINDOWS (7711de06-b17a-4791-84c2-10913ad326ac)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 11:35:43 166] (PageObject.java:215) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 11:35:45 199] (PageObject.java:55) The method clickElementWithJSE executed done with element = [[[FirefoxDriver: firefox on WINDOWS (7711de06-b17a-4791-84c2-10913ad326ac)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 11:35:45 199] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 11:35:45 199] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 11:36:17 722] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 11:36:17 726] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 11:36:17 987] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 11:36:18 002] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 11:36:18 672] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 11:36:18 801] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 11:36:18 833] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 11:36:18 861] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 11:36:20 999] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 11:36:22 131] (PageObject.java:230) Click the tag [[[FirefoxDriver: firefox on WINDOWS (dbfc789b-5d04-421a-8294-3ee9abbda42d)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 11:36:22 435] (PageObject.java:215) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 11:36:24 727] (PageObject.java:55) The method clickElementWithJSE executed done with element = [[[FirefoxDriver: firefox on WINDOWS (dbfc789b-5d04-421a-8294-3ee9abbda42d)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 11:36:24 728] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 11:36:24 728] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 11:37:26 686] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 11:37:26 689] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 11:37:26 996] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 11:37:27 022] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 11:37:27 822] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 11:37:27 950] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 11:37:27 973] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 11:37:28 002] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 11:37:30 088] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 11:37:31 195] (PageObject.java:230) Click the tag [[[FirefoxDriver: firefox on WINDOWS (9c9ef3e3-a04c-4629-9d10-cef66fa6292b)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 11:37:31 495] (PageObject.java:215) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 11:37:33 892] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 11:37:33 893] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 11:45:41 662] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 11:45:41 665] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 11:45:42 016] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 11:45:42 043] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 11:45:42 282] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 11:45:42 398] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 11:45:42 418] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 11:45:42 445] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 11:45:44 417] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 11:45:45 616] (PageObject.java:230) Click the tag [[[FirefoxDriver: firefox on WINDOWS (927256e8-1b07-4cb0-9d6a-4ef6fba42c8b)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 11:45:45 922] (PageObject.java:215) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 11:45:48 190] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 11:45:48 191] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 11:46:55 565] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 11:46:55 571] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 11:46:55 889] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 11:46:55 910] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 11:46:56 647] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 11:46:56 786] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 11:46:56 809] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 11:46:56 842] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 11:46:59 079] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 11:47:00 010] (PageObject.java:230) Click the tag [[[FirefoxDriver: firefox on WINDOWS (8c9c06a3-02d6-407a-9beb-e6ac3715bdf0)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 11:47:00 309] (PageObject.java:215) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 11:47:02 469] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 11:47:02 470] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 11:48:28 147] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 11:48:28 151] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 11:48:28 485] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 11:48:28 504] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 11:48:29 217] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 11:48:29 344] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 11:48:29 366] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 11:48:29 395] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 11:48:31 513] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 11:48:32 584] (PageObject.java:230) Click the tag [[[FirefoxDriver: firefox on WINDOWS (bd0c308d-bff3-4334-b145-328b5cd3ad5b)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 11:48:32 860] (PageObject.java:215) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 11:48:35 164] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 11:48:35 166] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 11:49:40 558] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 11:49:40 562] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 11:49:40 876] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 11:49:40 894] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 11:49:41 127] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 11:49:41 245] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 11:49:41 266] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 11:49:41 291] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 11:49:43 323] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 11:49:44 492] (PageObject.java:230) Click the tag [[[FirefoxDriver: firefox on WINDOWS (c6acb646-d8ed-437f-9fcd-037b577d3fad)] -> xpath: //*[@id="rootNode"]/li[6]/a]].
+[ERROR] [2016-11-04 11:49:45 558] (PageObject.java:220) Can not find the subtag [项目批量录入].
+[ INFO] [2016-11-04 11:49:50 563] (RetryExec.java:96) I/O exception (java.net.SocketException) caught when processing request to {}->http://127.0.0.1:7055: Permission denied: connect
+[ INFO] [2016-11-04 11:49:50 563] (RetryExec.java:112) Retrying request to {}->http://127.0.0.1:7055
+[ INFO] [2016-11-04 11:49:50 564] (RetryExec.java:96) I/O exception (java.net.SocketException) caught when processing request to {}->http://127.0.0.1:7055: Permission denied: connect
+[ INFO] [2016-11-04 11:49:50 564] (RetryExec.java:112) Retrying request to {}->http://127.0.0.1:7055
+[ INFO] [2016-11-04 11:49:50 565] (RetryExec.java:96) I/O exception (java.net.SocketException) caught when processing request to {}->http://127.0.0.1:7055: Permission denied: connect
+[ INFO] [2016-11-04 11:49:50 566] (RetryExec.java:112) Retrying request to {}->http://127.0.0.1:7055
+[ INFO] [2016-11-04 11:50:28 647] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 11:50:28 650] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 11:50:28 952] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 11:50:28 980] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 11:50:29 218] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 11:50:29 331] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 11:50:29 354] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 11:50:29 380] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 11:50:31 470] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 11:50:32 533] (PageObject.java:230) Click the tag [[[FirefoxDriver: firefox on WINDOWS (957c3f36-5e87-4b7a-807b-1712bc912951)] -> xpath: //*[@id="rootNode"]/li[6]/a]].
+[ERROR] [2016-11-04 11:50:33 610] (PageObject.java:220) Can not find the subtag [项目批量录入].
+[ INFO] [2016-11-04 11:52:29 551] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 11:52:29 555] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 11:52:29 906] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 11:52:29 925] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 11:52:30 658] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 11:52:30 777] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 11:52:30 798] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 11:52:30 836] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 11:52:32 928] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 11:52:34 075] (PageObject.java:230) Click the tag [[[FirefoxDriver: firefox on WINDOWS (aafcd4e7-27b9-423c-a5f0-aff0c2a70caa)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 11:52:34 362] (PageObject.java:215) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 11:52:36 609] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 11:52:36 610] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 11:52:47 734] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 11:52:47 735] (LogUtil.java:11) ---------------------- testLogin Start -------------------------
+[ INFO] [2016-11-04 11:52:47 831] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 11:52:47 834] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 11:52:48 653] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 11:52:48 771] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 11:52:48 791] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 11:52:48 814] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 11:52:48 815] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 11:52:48 815] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 11:53:23 028] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 11:53:23 032] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 11:53:23 325] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 11:53:23 346] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 11:53:23 969] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 11:53:24 101] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 11:53:24 124] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 11:53:24 152] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 11:53:26 285] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 11:53:27 451] (PageObject.java:230) Click the tag [[[FirefoxDriver: firefox on WINDOWS (1df8c79c-2ffc-4803-a390-13f8f5328a68)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 11:53:27 743] (PageObject.java:215) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 11:53:30 032] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 11:53:30 033] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 11:54:40 205] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 11:54:40 209] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 11:54:40 507] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 11:54:40 537] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 11:54:40 761] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 11:54:40 874] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 11:54:40 894] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 11:54:40 922] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 11:54:42 906] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 11:54:44 000] (PageObject.java:230) Click the tag [[[FirefoxDriver: firefox on WINDOWS (e013cb4a-cfa8-452e-84c2-752fbdc17f17)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 11:54:44 297] (PageObject.java:215) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 11:54:46 680] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 11:54:46 680] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 12:02:48 824] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 12:02:48 828] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 12:02:49 160] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 12:02:49 182] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 12:02:49 765] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 12:02:49 891] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 12:02:49 914] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 12:02:49 950] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 12:02:52 113] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 12:02:53 307] (PageObject.java:230) Click the tag [[[FirefoxDriver: firefox on WINDOWS (a39013ae-83ce-482f-8983-aabfc1e102e3)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 12:02:53 601] (PageObject.java:215) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 12:02:55 895] (PageObject.java:55) The method clickElementWithJSE executed done with element = [[[FirefoxDriver: firefox on WINDOWS (a39013ae-83ce-482f-8983-aabfc1e102e3)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 12:02:55 895] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 12:02:55 896] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 12:04:50 915] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 12:04:50 918] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 12:04:51 101] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 12:04:51 123] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 12:04:51 739] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 12:04:51 905] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 12:04:51 929] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 12:04:51 954] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 12:04:54 076] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 12:04:54 079] (PageObject.java:228)  Before e []
+[ INFO] [2016-11-04 12:04:55 187] (PageObject.java:230)  After e []
+[ INFO] [2016-11-04 12:04:55 188] (PageObject.java:232) Click the tag [[[FirefoxDriver: firefox on WINDOWS (945e531e-889d-4f2d-a20c-b7a3a9c6b84e)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 12:04:55 463] (PageObject.java:215) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 12:04:57 637] (PageObject.java:55) The method clickElementWithJSE executed done with element = [[[FirefoxDriver: firefox on WINDOWS (945e531e-889d-4f2d-a20c-b7a3a9c6b84e)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 12:04:57 637] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 12:04:57 694] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 12:06:25 439] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 12:06:25 442] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 12:06:25 625] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 12:06:25 645] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 12:06:25 869] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 12:06:25 998] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 12:06:26 023] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 12:06:26 050] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 12:06:28 360] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 12:06:29 263] (PageObject.java:228) Before e []
+[ INFO] [2016-11-04 12:06:29 456] (PageObject.java:230) After e []
+[ INFO] [2016-11-04 12:06:29 457] (PageObject.java:232) Click the tag [[[FirefoxDriver: firefox on WINDOWS (934bfd7f-e206-4932-8cbe-ea2fc57b15b2)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 12:06:29 738] (PageObject.java:215) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 12:06:31 964] (PageObject.java:55) The method clickElementWithJSE executed done with element = [[[FirefoxDriver: firefox on WINDOWS (934bfd7f-e206-4932-8cbe-ea2fc57b15b2)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 12:06:31 965] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 12:06:31 965] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 12:07:52 906] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 12:07:52 910] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 12:07:53 180] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 12:07:53 197] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 12:07:53 957] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 12:07:54 077] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 12:07:54 106] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 12:07:54 134] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 12:07:56 247] (PageObject.java:227) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 12:07:57 058] (PageObject.java:229) Before e []
+[ INFO] [2016-11-04 12:07:57 258] (PageObject.java:231) After e []
+[ INFO] [2016-11-04 12:07:57 259] (PageObject.java:234) Click the tag [[[FirefoxDriver: firefox on WINDOWS (6ed6b831-127e-4565-9df5-b7b733155f13)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 12:07:57 568] (PageObject.java:215) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 12:07:59 775] (PageObject.java:55) The method clickElementWithJSE executed done with element = [[[FirefoxDriver: firefox on WINDOWS (6ed6b831-127e-4565-9df5-b7b733155f13)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 12:07:59 775] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 12:07:59 776] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 12:28:33 435] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 12:28:33 439] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 12:28:33 887] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 12:28:33 912] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 12:28:34 588] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 12:28:34 719] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 12:28:34 746] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 12:28:34 781] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 12:28:37 034] (PageObject.java:233) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 12:28:37 908] (PageObject.java:236) Click the tag [[[FirefoxDriver: firefox on WINDOWS (f41bd6bb-86af-41f0-84f1-e79fcb23099b)] -> xpath: //*[@id="rootNode"]/li[6]]].
+[ INFO] [2016-11-04 12:28:39 909] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 12:28:39 909] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 12:29:53 741] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 12:29:53 745] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 12:29:53 920] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 12:29:53 937] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 12:29:54 745] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 12:29:54 875] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 12:29:54 897] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 12:29:54 926] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 12:29:57 081] (PageObject.java:233) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 12:29:58 037] (PageObject.java:236) Click the tag [[[FirefoxDriver: firefox on WINDOWS (50b7888c-b4a9-4443-9783-5be1331df907)] -> xpath: //*[@id="rootNode"]/li[6]/a]].
+[ INFO] [2016-11-04 12:30:00 037] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 12:30:00 037] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 12:30:45 835] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 12:30:45 839] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 12:30:46 036] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 12:30:46 055] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 12:30:46 737] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 12:30:46 913] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 12:30:46 934] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 12:30:46 960] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 12:30:49 167] (PageObject.java:233) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 12:30:50 194] (PageObject.java:236) Click the tag [[[FirefoxDriver: firefox on WINDOWS (f0465d27-0815-43d3-94f9-919dc0a8463d)] -> xpath: //*[@id="rootNode"]/li[6]/ul]].
+[ INFO] [2016-11-04 12:30:52 194] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 12:30:52 194] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 12:31:03 229] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 12:31:03 230] (LogUtil.java:11) ---------------------- testLogin Start -------------------------
+[ INFO] [2016-11-04 12:31:03 297] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 12:31:03 297] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 12:31:04 112] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 12:31:04 229] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 12:31:04 248] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 12:31:04 275] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 12:31:04 276] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 12:31:04 277] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 12:32:03 351] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 12:32:03 354] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 12:32:03 564] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 12:32:03 580] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 12:32:04 216] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 12:32:04 341] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 12:32:04 364] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 12:32:04 393] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 12:32:06 659] (PageObject.java:233) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 12:32:07 579] (PageObject.java:236) Click the tag [[[FirefoxDriver: firefox on WINDOWS (a397e5f6-e58e-46fa-a4d0-43290bdc320e)] -> xpath: //*[@id="rootNode"]/li[6]/ul]].
+[ INFO] [2016-11-04 12:32:09 580] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 12:32:09 581] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 12:35:07 888] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 12:35:07 892] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 12:35:08 150] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 12:35:08 162] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 12:35:08 833] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 12:35:08 976] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 12:35:09 001] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 12:35:09 068] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 12:35:11 155] (PageObject.java:233) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 12:35:12 134] (PageObject.java:236) Click the tag [[[FirefoxDriver: firefox on WINDOWS (277d79c2-6586-4f3c-95ca-8695d0608ef8)] -> xpath: //*[@id="rootNode"]/li[6]/ul]].
+[ INFO] [2016-11-04 12:35:12 320] (PageObject.java:221) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 12:35:14 320] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 12:35:14 320] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 12:43:26 168] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 12:43:26 172] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 12:43:26 509] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 12:43:26 534] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 12:43:27 178] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 12:43:27 309] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 12:43:27 329] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 12:43:27 357] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 12:43:29 459] (PageObject.java:233) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 12:43:30 396] (PageObject.java:236) Click the tag [[[FirefoxDriver: firefox on WINDOWS (ded14a3c-9d5f-43c1-abf4-8fd13e1e3ab6)] -> xpath: //*[@id="rootNode"]/li[6]/ul]].
+[ INFO] [2016-11-04 12:43:30 594] (PageObject.java:221) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 12:43:32 785] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 12:43:32 786] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 12:46:29 707] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 12:46:29 711] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 12:46:29 995] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 12:46:30 016] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 12:46:30 667] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 12:46:30 801] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 12:46:30 828] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 12:46:30 854] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 12:46:33 011] (PageObject.java:234) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 12:46:33 919] (PageObject.java:237) Click the tag [[[FirefoxDriver: firefox on WINDOWS (a34c8ff5-d0b2-478a-a02b-62cf6b58081d)] -> xpath: //*[@id="rootNode"]/li[6]/ul]].
+[ INFO] [2016-11-04 12:46:34 118] (PageObject.java:221) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 12:46:36 287] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 12:46:36 287] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 12:51:23 842] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 12:51:23 845] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 12:51:24 050] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 12:51:24 066] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 12:51:24 283] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 12:51:24 398] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 12:51:24 418] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 12:51:24 441] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 12:51:26 679] (PageObject.java:234) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 12:51:27 588] (PageObject.java:237) Click the tag [[[FirefoxDriver: firefox on WINDOWS (7e9907ce-b202-432f-be74-e67ed4352fc2)] -> xpath: //*[@id="rootNode"]/li[6]/ul]].
+[ INFO] [2016-11-04 12:51:27 788] (PageObject.java:221) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 12:51:29 891] (PageObject.java:256) Again top tag []
+[ INFO] [2016-11-04 12:51:30 085] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 12:51:30 085] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 12:52:21 435] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 12:52:21 440] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 12:52:21 771] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 12:52:21 795] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 12:52:22 025] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 12:52:22 140] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 12:52:22 161] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 12:52:22 186] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 12:52:24 275] (PageObject.java:234) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 12:52:25 228] (PageObject.java:237) Click the tag [[[FirefoxDriver: firefox on WINDOWS (c1caf8e9-c819-47ea-875d-74690f715224)] -> xpath: //*[@id="rootNode"]/li[6]/ul]].
+[ INFO] [2016-11-04 12:52:25 423] (PageObject.java:221) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 12:52:27 427] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 12:52:27 428] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 12:53:13 851] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 12:53:13 855] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 12:53:14 166] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 12:53:14 192] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 12:53:14 888] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 12:53:15 020] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 12:53:15 044] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 12:53:15 071] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 12:53:17 365] (PageObject.java:234) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 12:53:18 103] (PageObject.java:237) Click the tag [[[FirefoxDriver: firefox on WINDOWS (3570721f-306c-42c6-98f3-73b2da54145e)] -> xpath: //*[@id="rootNode"]/li[6]/ul]].
+[ INFO] [2016-11-04 12:53:18 312] (PageObject.java:221) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 12:53:20 313] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 12:53:20 313] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 12:54:39 037] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 12:54:39 041] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 12:54:39 355] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 12:54:39 378] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 12:54:40 097] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 12:54:40 264] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 12:54:40 286] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 12:54:40 313] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 12:54:42 476] (PageObject.java:234) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 12:54:43 409] (PageObject.java:237) Click the tag [[[FirefoxDriver: firefox on WINDOWS (dd58e975-c64f-4c94-803c-6b5225cb0f22)] -> xpath: //*[@id="rootNode"]/li[6]/ul]].
+[ INFO] [2016-11-04 12:54:43 629] (PageObject.java:221) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 12:54:45 941] (PageObject.java:55) The method clickElementWithJSE executed done with element = [[[FirefoxDriver: firefox on WINDOWS (dd58e975-c64f-4c94-803c-6b5225cb0f22)] -> xpath: //*[@id="rootNode"]/li[6]/ul]].
+[ INFO] [2016-11-04 12:54:45 942] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 12:54:45 942] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 12:57:13 923] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 12:57:13 926] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 12:57:14 199] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 12:57:14 222] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 12:57:15 063] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 12:57:15 194] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 12:57:15 216] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 12:57:15 244] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 12:57:17 330] (PageObject.java:240) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 12:57:18 270] (PageObject.java:243) Click the tag [[[FirefoxDriver: firefox on WINDOWS (a09d43f0-7240-4e26-83ef-35d79dfb7bc5)] -> xpath: //*[@id="rootNode"]/li[6]/ul]].
+[ INFO] [2016-11-04 12:57:18 494] (PageObject.java:227) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 12:57:20 543] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 12:57:20 543] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 13:04:41 781] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 13:04:41 787] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 13:04:42 122] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 13:04:42 143] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 13:04:42 823] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 13:04:42 952] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 13:04:42 974] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 13:04:43 007] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 13:04:45 177] (PageObject.java:240) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 13:04:46 410] (PageObject.java:245) Click the tag [[[FirefoxDriver: firefox on WINDOWS (cded615b-31c3-4eb8-b5e3-3467469b91ae)] -> xpath: //*[@id="rootNode"]/li[6]/ul]].
+[ERROR] [2016-11-04 13:04:49 323] (PageObject.java:232) Can not find the subtag [项目批量录入].
+[ INFO] [2016-11-04 13:06:57 996] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 13:06:58 000] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 13:06:58 182] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 13:06:58 198] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 13:06:59 023] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 13:06:59 148] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 13:06:59 174] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 13:06:59 207] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 13:07:01 688] (PageObject.java:240) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 13:07:03 080] (PageObject.java:245) Click the tag [[[FirefoxDriver: firefox on WINDOWS (c6ee078f-c5df-43fd-897a-c15eb3ae9650)] -> xpath: //*[@id="rootNode"]/li[6]/ul]].
+[ERROR] [2016-11-04 13:07:03 528] (PageObject.java:232) Can not find the subtag [项目批量录入].
+[ INFO] [2016-11-04 13:10:00 294] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 13:10:00 299] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 13:10:00 549] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 13:10:00 575] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 13:10:01 372] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 13:10:01 496] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 13:10:01 529] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 13:10:01 557] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 13:10:03 813] (PageObject.java:240) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 13:10:04 893] (PageObject.java:275) top tag get text:乐视金融
+[ INFO] [2016-11-04 13:10:04 938] (PageObject.java:275) top tag get text:名单库
+[ INFO] [2016-11-04 13:10:04 983] (PageObject.java:275) top tag get text:liucx菜单
+[ INFO] [2016-11-04 13:10:05 034] (PageObject.java:275) top tag get text:客户管理
+[ INFO] [2016-11-04 13:10:05 081] (PageObject.java:275) top tag get text:
+[ INFO] [2016-11-04 13:10:05 127] (PageObject.java:275) top tag get text:
+[ INFO] [2016-11-04 13:10:05 166] (PageObject.java:275) top tag get text:
+[ INFO] [2016-11-04 13:10:05 208] (PageObject.java:275) top tag get text:
+[ INFO] [2016-11-04 13:10:05 248] (PageObject.java:275) top tag get text:
+[ INFO] [2016-11-04 13:10:05 293] (PageObject.java:275) top tag get text:合同管理
+[ INFO] [2016-11-04 13:10:05 338] (PageObject.java:275) top tag get text:
+[ INFO] [2016-11-04 13:10:05 393] (PageObject.java:275) top tag get text:项目管理
+[ INFO] [2016-11-04 13:10:05 471] (PageObject.java:245) Click the tag [[[FirefoxDriver: firefox on WINDOWS (1560aebc-630a-45d2-989b-8de03dc7594d)] -> xpath: //*[@id="rootNode"]/li[6]/ul]].
+[ERROR] [2016-11-04 13:10:05 791] (PageObject.java:232) Can not find the subtag [项目批量录入].
+[ INFO] [2016-11-04 13:12:39 121] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 13:12:39 125] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 13:12:39 411] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 13:12:39 427] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 13:12:40 069] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 13:12:40 204] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 13:12:40 229] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 13:12:40 264] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 13:12:42 467] (PageObject.java:240) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 13:12:43 556] (PageObject.java:275) top tag get text:乐视金融
+[ INFO] [2016-11-04 13:12:43 639] (PageObject.java:275) top tag get text:名单库
+[ INFO] [2016-11-04 13:12:43 686] (PageObject.java:275) top tag get text:liucx菜单
+[ INFO] [2016-11-04 13:12:43 754] (PageObject.java:275) top tag get text:客户管理
+[ INFO] [2016-11-04 13:12:43 805] (PageObject.java:275) top tag get text:
+[ INFO] [2016-11-04 13:12:43 853] (PageObject.java:275) top tag get text:
+[ INFO] [2016-11-04 13:12:43 895] (PageObject.java:275) top tag get text:
+[ INFO] [2016-11-04 13:12:43 941] (PageObject.java:275) top tag get text:
+[ INFO] [2016-11-04 13:12:43 983] (PageObject.java:275) top tag get text:
+[ INFO] [2016-11-04 13:12:44 029] (PageObject.java:275) top tag get text:合同管理
+[ INFO] [2016-11-04 13:12:44 070] (PageObject.java:275) top tag get text:
+[ INFO] [2016-11-04 13:12:44 127] (PageObject.java:275) top tag get text:项目管理
+[ INFO] [2016-11-04 13:12:44 215] (PageObject.java:245) Click the tag [[[FirefoxDriver: firefox on WINDOWS (96767a98-b1ab-429c-b07d-455b289b7864)] -> xpath: //*[@id="rootNode"]/li[6]/ul]].
+[ERROR] [2016-11-04 13:12:44 551] (PageObject.java:232) Can not find the subtag [项目批量录入].
+[ INFO] [2016-11-04 13:15:28 134] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 13:15:28 138] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 13:15:28 422] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 13:15:28 439] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 13:15:28 654] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 13:15:28 775] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 13:15:28 798] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 13:15:28 828] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 13:15:30 820] (PageObject.java:240) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 13:15:31 826] (PageObject.java:275) top tag get text:乐视金融
+[ INFO] [2016-11-04 13:15:31 872] (PageObject.java:275) top tag get text:名单库
+[ INFO] [2016-11-04 13:15:31 918] (PageObject.java:275) top tag get text:liucx菜单
+[ INFO] [2016-11-04 13:15:31 969] (PageObject.java:275) top tag get text:客户管理
+[ INFO] [2016-11-04 13:15:32 023] (PageObject.java:275) top tag get text:
+[ INFO] [2016-11-04 13:15:32 066] (PageObject.java:275) top tag get text:
+[ INFO] [2016-11-04 13:15:32 110] (PageObject.java:275) top tag get text:
+[ INFO] [2016-11-04 13:15:32 153] (PageObject.java:275) top tag get text:
+[ INFO] [2016-11-04 13:15:32 194] (PageObject.java:275) top tag get text:
+[ INFO] [2016-11-04 13:15:32 245] (PageObject.java:275) top tag get text:合同管理
+[ INFO] [2016-11-04 13:15:32 291] (PageObject.java:275) top tag get text:
+[ INFO] [2016-11-04 13:15:32 345] (PageObject.java:275) top tag get text:项目管理
+[ INFO] [2016-11-04 13:15:32 605] (PageObject.java:245) Click the tag [[[FirefoxDriver: firefox on WINDOWS (e2fc8287-7966-4adf-918c-26105f765b08)] -> xpath: //*[@id="rootNode"]/li[6]/ul]].
+[ INFO] [2016-11-04 13:15:32 889] (PageObject.java:227) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 13:15:34 924] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 13:15:34 924] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 13:16:29 670] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 13:16:29 674] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 13:16:29 994] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 13:16:30 014] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 13:16:30 233] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 13:16:30 348] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 13:16:30 370] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 13:16:30 395] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 13:16:32 648] (PageObject.java:240) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 13:16:33 485] (PageObject.java:275) top tag get text:乐视金融
+[ INFO] [2016-11-04 13:16:33 537] (PageObject.java:275) top tag get text:名单库
+[ INFO] [2016-11-04 13:16:33 589] (PageObject.java:275) top tag get text:liucx菜单
+[ INFO] [2016-11-04 13:16:33 640] (PageObject.java:275) top tag get text:客户管理
+[ INFO] [2016-11-04 13:16:33 695] (PageObject.java:275) top tag get text:
+[ INFO] [2016-11-04 13:16:33 735] (PageObject.java:275) top tag get text:
+[ INFO] [2016-11-04 13:16:33 781] (PageObject.java:275) top tag get text:
+[ INFO] [2016-11-04 13:16:33 828] (PageObject.java:275) top tag get text:
+[ INFO] [2016-11-04 13:16:33 869] (PageObject.java:275) top tag get text:
+[ INFO] [2016-11-04 13:16:33 913] (PageObject.java:275) top tag get text:合同管理
+[ INFO] [2016-11-04 13:16:33 957] (PageObject.java:275) top tag get text:
+[ INFO] [2016-11-04 13:16:34 016] (PageObject.java:275) top tag get text:项目管理
+[ INFO] [2016-11-04 13:16:34 097] (PageObject.java:245) Click the tag [[[FirefoxDriver: firefox on WINDOWS (6a4c1112-aa2e-414c-aa6c-c2ee11b5f8c0)] -> xpath: //*[@id="rootNode"]/li[6]/ul]].
+[ERROR] [2016-11-04 13:16:34 436] (PageObject.java:232) Can not find the subtag [项目批量录入].
+[ INFO] [2016-11-04 13:18:45 521] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 13:18:45 525] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 13:18:45 851] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 13:18:45 873] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 13:18:46 486] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 13:18:46 634] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 13:18:46 668] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 13:18:46 711] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 13:18:48 803] (PageObject.java:240) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 13:18:49 847] (PageObject.java:277) top tag get text:乐视金融
+[ INFO] [2016-11-04 13:18:49 894] (PageObject.java:277) top tag get text:liucx菜单
+[ INFO] [2016-11-04 13:18:49 939] (PageObject.java:277) top tag get text:名单库
+[ INFO] [2016-11-04 13:18:49 991] (PageObject.java:277) top tag get text:客户管理
+[ INFO] [2016-11-04 13:18:50 040] (PageObject.java:277) top tag get text:
+[ INFO] [2016-11-04 13:18:50 087] (PageObject.java:277) top tag get text:
+[ INFO] [2016-11-04 13:18:50 127] (PageObject.java:277) top tag get text:
+[ INFO] [2016-11-04 13:18:50 173] (PageObject.java:277) top tag get text:
+[ INFO] [2016-11-04 13:18:50 215] (PageObject.java:277) top tag get text:
+[ INFO] [2016-11-04 13:18:50 262] (PageObject.java:277) top tag get text:合同管理
+[ INFO] [2016-11-04 13:18:50 306] (PageObject.java:277) top tag get text:
+[ INFO] [2016-11-04 13:18:50 361] (PageObject.java:277) top tag get text:项目管理
+[ INFO] [2016-11-04 13:18:50 420] (PageObject.java:243) topTag to String [[FirefoxDriver: firefox on WINDOWS (2074ce41-93a7-49a1-91ad-c3990dc1b648)] -> xpath: //*[@id="rootNode"]/li[6]/ul]
+[ INFO] [2016-11-04 13:18:50 421] (PageObject.java:244) aElement to String [[[[FirefoxDriver: firefox on WINDOWS (2074ce41-93a7-49a1-91ad-c3990dc1b648)] -> id: rootNode]] -> tag name: li]
+[ERROR] [2016-11-04 13:18:50 789] (PageObject.java:232) Can not find the subtag [项目批量录入].
+[ INFO] [2016-11-04 13:24:53 480] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 13:24:53 483] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 13:24:53 714] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 13:24:53 732] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 13:24:53 963] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 13:24:54 088] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 13:24:54 112] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 13:24:54 141] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 13:24:56 335] (PageObject.java:240) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 13:24:57 386] (PageObject.java:277) top tag get text:乐视金融
+[ INFO] [2016-11-04 13:24:57 439] (PageObject.java:277) top tag get text:名单库
+[ INFO] [2016-11-04 13:24:57 491] (PageObject.java:277) top tag get text:liucx菜单
+[ INFO] [2016-11-04 13:24:57 548] (PageObject.java:277) top tag get text:客户管理
+[ INFO] [2016-11-04 13:24:57 605] (PageObject.java:277) top tag get text:
+[ INFO] [2016-11-04 13:24:57 651] (PageObject.java:277) top tag get text:
+[ INFO] [2016-11-04 13:24:57 694] (PageObject.java:277) top tag get text:
+[ INFO] [2016-11-04 13:24:57 742] (PageObject.java:277) top tag get text:
+[ INFO] [2016-11-04 13:24:57 785] (PageObject.java:277) top tag get text:
+[ INFO] [2016-11-04 13:24:57 833] (PageObject.java:277) top tag get text:合同管理
+[ INFO] [2016-11-04 13:24:57 882] (PageObject.java:277) top tag get text:
+[ INFO] [2016-11-04 13:24:57 942] (PageObject.java:277) top tag get text:项目管理
+[ INFO] [2016-11-04 13:24:57 976] (PageObject.java:280) return e:[[[[FirefoxDriver: firefox on WINDOWS (eec05bf2-abc8-47c8-b376-2f470f3a0f0f)] -> id: rootNode]] -> tag name: li]
+[ INFO] [2016-11-04 13:24:57 996] (PageObject.java:281) return e.getTagName:li
+[ INFO] [2016-11-04 13:24:58 017] (PageObject.java:282) return e.getLocation:(0, 200)
+[ INFO] [2016-11-04 13:24:58 041] (PageObject.java:243) topTag to String [[FirefoxDriver: firefox on WINDOWS (eec05bf2-abc8-47c8-b376-2f470f3a0f0f)] -> xpath: //*[@id="rootNode"]/li[6]/ul]
+[ INFO] [2016-11-04 13:24:58 041] (PageObject.java:244) aElement to String [[[[FirefoxDriver: firefox on WINDOWS (eec05bf2-abc8-47c8-b376-2f470f3a0f0f)] -> id: rootNode]] -> tag name: li]
+[ERROR] [2016-11-04 13:24:58 421] (PageObject.java:232) Can not find the subtag [项目批量录入].
+[ INFO] [2016-11-04 13:26:48 915] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 13:26:48 924] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 13:26:49 150] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 13:26:49 171] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 13:26:49 819] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 13:26:49 956] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 13:26:49 978] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 13:26:50 008] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 13:26:52 176] (PageObject.java:240) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 13:26:53 305] (PageObject.java:278) top tag get text:乐视金融
+[ INFO] [2016-11-04 13:26:53 355] (PageObject.java:278) top tag get text:名单库
+[ INFO] [2016-11-04 13:26:53 407] (PageObject.java:278) top tag get text:liucx菜单
+[ INFO] [2016-11-04 13:26:53 463] (PageObject.java:278) top tag get text:客户管理
+[ INFO] [2016-11-04 13:26:53 522] (PageObject.java:278) top tag get text:
+[ INFO] [2016-11-04 13:26:53 562] (PageObject.java:278) top tag get text:
+[ INFO] [2016-11-04 13:26:53 608] (PageObject.java:278) top tag get text:
+[ INFO] [2016-11-04 13:26:53 650] (PageObject.java:278) top tag get text:
+[ INFO] [2016-11-04 13:26:53 694] (PageObject.java:278) top tag get text:
+[ INFO] [2016-11-04 13:26:53 738] (PageObject.java:278) top tag get text:合同管理
+[ INFO] [2016-11-04 13:26:53 782] (PageObject.java:278) top tag get text:
+[ INFO] [2016-11-04 13:26:53 836] (PageObject.java:278) top tag get text:项目管理
+[ INFO] [2016-11-04 13:26:53 874] (PageObject.java:281) return e:[[[[FirefoxDriver: firefox on WINDOWS (7a1f7ca4-18a7-4627-98de-022320511a00)] -> id: rootNode]] -> tag name: li]
+[ INFO] [2016-11-04 13:26:53 893] (PageObject.java:282) return e.getTagName:li
+[ INFO] [2016-11-04 13:26:53 912] (PageObject.java:283) return e.getLocation:(0, 200)
+[ INFO] [2016-11-04 13:26:53 938] (PageObject.java:243) topTag to String [[FirefoxDriver: firefox on WINDOWS (7a1f7ca4-18a7-4627-98de-022320511a00)] -> xpath: //*[@id="rootNode"]/li[6]/ul]
+[ INFO] [2016-11-04 13:26:53 980] (PageObject.java:244) topTag getTagName ul
+[ INFO] [2016-11-04 13:26:53 980] (PageObject.java:245) aElement to String [[[[FirefoxDriver: firefox on WINDOWS (7a1f7ca4-18a7-4627-98de-022320511a00)] -> id: rootNode]] -> tag name: li]
+[ERROR] [2016-11-04 13:26:54 340] (PageObject.java:232) Can not find the subtag [项目批量录入].
+[ INFO] [2016-11-04 13:29:46 853] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 13:29:46 856] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 13:29:47 185] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 13:29:47 208] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 13:29:47 950] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 13:29:48 117] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 13:29:48 142] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 13:29:48 174] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 13:29:50 350] (PageObject.java:240) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 13:29:51 281] (PageObject.java:278) top tag get text:乐视金融
+[ INFO] [2016-11-04 13:29:51 333] (PageObject.java:278) top tag get text:liucx菜单
+[ INFO] [2016-11-04 13:29:51 383] (PageObject.java:278) top tag get text:名单库
+[ INFO] [2016-11-04 13:29:51 441] (PageObject.java:278) top tag get text:客户管理
+[ INFO] [2016-11-04 13:29:51 552] (PageObject.java:278) top tag get text:合同管理
+[ INFO] [2016-11-04 13:29:51 618] (PageObject.java:278) top tag get text:项目管理
+[ INFO] [2016-11-04 13:29:51 655] (PageObject.java:281) return e:[[[[FirefoxDriver: firefox on WINDOWS (7b4a787b-61d8-4cfe-9824-32d6773b602c)] -> id: rootNode]] -> xpath: ./li]
+[ INFO] [2016-11-04 13:29:51 674] (PageObject.java:282) return e.getTagName:li
+[ INFO] [2016-11-04 13:29:51 695] (PageObject.java:283) return e.getLocation:(0, 200)
+[ INFO] [2016-11-04 13:29:51 731] (PageObject.java:243) topTag to String [[FirefoxDriver: firefox on WINDOWS (7b4a787b-61d8-4cfe-9824-32d6773b602c)] -> xpath: //*[@id="rootNode"]/li[6]/ul]
+[ INFO] [2016-11-04 13:29:51 779] (PageObject.java:244) topTag getTagName ul
+[ INFO] [2016-11-04 13:29:51 780] (PageObject.java:245) aElement to String [[[[FirefoxDriver: firefox on WINDOWS (7b4a787b-61d8-4cfe-9824-32d6773b602c)] -> id: rootNode]] -> xpath: ./li]
+[ERROR] [2016-11-04 13:29:52 168] (PageObject.java:232) Can not find the subtag [项目批量录入].
+[ INFO] [2016-11-04 13:32:02 832] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 13:32:02 836] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 13:32:03 095] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 13:32:03 119] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 13:32:03 870] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 13:32:04 028] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 13:32:04 059] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 13:32:04 102] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 13:32:08 675] (PageObject.java:240) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 13:32:09 671] (PageObject.java:278) top tag get text:乐视金融
+[ INFO] [2016-11-04 13:32:09 736] (PageObject.java:278) top tag get text:liucx菜单
+[ INFO] [2016-11-04 13:32:09 796] (PageObject.java:278) top tag get text:名单库
+[ INFO] [2016-11-04 13:32:09 868] (PageObject.java:278) top tag get text:客户管理
+[ INFO] [2016-11-04 13:32:09 936] (PageObject.java:278) top tag get text:合同管理
+[ INFO] [2016-11-04 13:32:10 013] (PageObject.java:278) top tag get text:项目管理
+[ INFO] [2016-11-04 13:32:10 123] (PageObject.java:281) return e:[[[[FirefoxDriver: firefox on WINDOWS (9454a3ce-8fbb-4f23-825b-cac049116720)] -> id: rootNode]] -> xpath: ./li]
+[ INFO] [2016-11-04 13:32:10 148] (PageObject.java:282) return e.getTagName:li
+[ INFO] [2016-11-04 13:32:10 173] (PageObject.java:283) return e.getLocation:(0, 200)
+[ INFO] [2016-11-04 13:32:10 210] (PageObject.java:243) topTag to String [[FirefoxDriver: firefox on WINDOWS (9454a3ce-8fbb-4f23-825b-cac049116720)] -> xpath: //*[@id="rootNode"]/li[6]/ul]
+[ INFO] [2016-11-04 13:32:10 259] (PageObject.java:244) topTag getTagName ul
+[ INFO] [2016-11-04 13:32:10 259] (PageObject.java:245) aElement to String [[[[FirefoxDriver: firefox on WINDOWS (9454a3ce-8fbb-4f23-825b-cac049116720)] -> id: rootNode]] -> xpath: ./li]
+[ERROR] [2016-11-04 13:32:10 644] (PageObject.java:232) Can not find the subtag [项目批量录入].
+[ INFO] [2016-11-04 13:34:32 728] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 13:34:32 731] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 13:34:32 958] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 13:34:32 977] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 13:34:33 204] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 13:34:33 328] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 13:34:33 352] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 13:34:33 383] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 13:34:35 565] (PageObject.java:241) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 13:34:36 515] (PageObject.java:279) top tag get text:乐视金融
+[ INFO] [2016-11-04 13:34:36 564] (PageObject.java:279) top tag get text:liucx菜单
+[ INFO] [2016-11-04 13:34:36 647] (PageObject.java:279) top tag get text:名单库
+[ INFO] [2016-11-04 13:34:36 705] (PageObject.java:279) top tag get text:客户管理
+[ INFO] [2016-11-04 13:34:36 759] (PageObject.java:279) top tag get text:合同管理
+[ INFO] [2016-11-04 13:34:36 821] (PageObject.java:279) top tag get text:项目管理
+[ INFO] [2016-11-04 13:34:36 864] (PageObject.java:282) return e:[[[[FirefoxDriver: firefox on WINDOWS (c5b14c7f-532e-488b-bee6-c52d82bc8da2)] -> id: rootNode]] -> xpath: ./li]
+[ INFO] [2016-11-04 13:34:36 885] (PageObject.java:283) return e.getTagName:li
+[ INFO] [2016-11-04 13:34:36 905] (PageObject.java:284) return e.getLocation:(0, 200)
+[ INFO] [2016-11-04 13:34:36 927] (PageObject.java:244) topTag to String [[FirefoxDriver: firefox on WINDOWS (c5b14c7f-532e-488b-bee6-c52d82bc8da2)] -> xpath: //*[@id="rootNode"]/li[6]/ul]
+[ INFO] [2016-11-04 13:34:36 969] (PageObject.java:245) topTag getTagName ul
+[ INFO] [2016-11-04 13:34:36 970] (PageObject.java:246) aElement to String [[[[FirefoxDriver: firefox on WINDOWS (c5b14c7f-532e-488b-bee6-c52d82bc8da2)] -> id: rootNode]] -> xpath: ./li]
+[ INFO] [2016-11-04 13:34:37 054] (PageObject.java:225) subtag.gettext []
+[ INFO] [2016-11-04 13:34:37 100] (PageObject.java:225) subtag.gettext []
+[ INFO] [2016-11-04 13:34:37 140] (PageObject.java:225) subtag.gettext []
+[ INFO] [2016-11-04 13:34:37 183] (PageObject.java:225) subtag.gettext []
+[ INFO] [2016-11-04 13:34:37 222] (PageObject.java:225) subtag.gettext []
+[ INFO] [2016-11-04 13:34:37 261] (PageObject.java:225) subtag.gettext []
+[ INFO] [2016-11-04 13:34:37 302] (PageObject.java:225) subtag.gettext []
+[ INFO] [2016-11-04 13:34:37 346] (PageObject.java:225) subtag.gettext []
+[ INFO] [2016-11-04 13:34:37 390] (PageObject.java:225) subtag.gettext []
+[ INFO] [2016-11-04 13:34:37 483] (PageObject.java:225) subtag.gettext []
+[ INFO] [2016-11-04 13:34:37 535] (PageObject.java:225) subtag.gettext []
+[ INFO] [2016-11-04 13:34:37 586] (PageObject.java:225) subtag.gettext []
+[ INFO] [2016-11-04 13:34:37 632] (PageObject.java:225) subtag.gettext []
+[ERROR] [2016-11-04 13:34:37 670] (PageObject.java:233) Can not find the subtag [项目批量录入].
+[ INFO] [2016-11-04 13:37:45 290] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 13:37:45 294] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 13:37:45 499] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 13:37:45 518] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 13:37:46 799] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 13:37:47 336] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 13:37:47 406] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 13:37:51 467] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 13:37:51 594] (PageObject.java:241) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 13:37:51 778] (PageObject.java:280) top tag get text:乐视金融
+[ INFO] [2016-11-04 13:37:51 858] (PageObject.java:280) top tag get text:liucx菜单
+[ INFO] [2016-11-04 13:37:51 938] (PageObject.java:280) top tag get text:名单库
+[ INFO] [2016-11-04 13:37:52 036] (PageObject.java:280) top tag get text:客户管理
+[ INFO] [2016-11-04 13:37:52 138] (PageObject.java:280) top tag get text:合同管理
+[ INFO] [2016-11-04 13:37:52 229] (PageObject.java:280) top tag get text:项目管理
+[ INFO] [2016-11-04 13:37:52 282] (PageObject.java:283) return e:[[[[FirefoxDriver: firefox on WINDOWS (85ad647d-509b-4e8a-a6ff-803e493042fd)] -> id: rootNode]] -> xpath: ./li]
+[ INFO] [2016-11-04 13:37:52 317] (PageObject.java:284) return e.getTagName:li
+[ INFO] [2016-11-04 13:37:52 350] (PageObject.java:285) return e.getLocation:(0, 200)
+[ INFO] [2016-11-04 13:37:52 381] (PageObject.java:244) topTag to String [[FirefoxDriver: firefox on WINDOWS (85ad647d-509b-4e8a-a6ff-803e493042fd)] -> xpath: //*[@id="rootNode"]/li[6]/ul]
+[ INFO] [2016-11-04 13:37:52 476] (PageObject.java:245) topTag getTagName ul
+[ INFO] [2016-11-04 13:37:52 476] (PageObject.java:246) aElement to String [[[[FirefoxDriver: firefox on WINDOWS (85ad647d-509b-4e8a-a6ff-803e493042fd)] -> id: rootNode]] -> xpath: ./li]
+[ INFO] [2016-11-04 13:37:52 726] (PageObject.java:225) subtag.gettext []
+[ INFO] [2016-11-04 13:37:52 946] (PageObject.java:228) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 13:37:54 978] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 13:37:54 978] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 13:41:06 552] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 13:41:06 555] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 13:41:06 864] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 13:41:06 896] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 13:41:07 513] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 13:41:07 627] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 13:41:07 649] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 13:41:07 674] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 13:41:09 852] (PageObject.java:241) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 13:41:10 762] (PageObject.java:281) top tag get text:乐视金融
+[ INFO] [2016-11-04 13:41:10 807] (PageObject.java:281) top tag get text:名单库
+[ INFO] [2016-11-04 13:41:10 863] (PageObject.java:281) top tag get text:liucx菜单
+[ INFO] [2016-11-04 13:41:10 928] (PageObject.java:281) top tag get text:客户管理
+[ INFO] [2016-11-04 13:41:10 986] (PageObject.java:281) top tag get text:合同管理
+[ INFO] [2016-11-04 13:41:11 052] (PageObject.java:281) top tag get text:项目管理
+[ INFO] [2016-11-04 13:41:11 144] (PageObject.java:284) return e:[[[[FirefoxDriver: firefox on WINDOWS (4b95b583-e44e-4af2-96fe-662ea7725dc1)] -> id: rootNode]] -> xpath: ./li]
+[ INFO] [2016-11-04 13:41:11 164] (PageObject.java:285) return e.getTagName:li
+[ INFO] [2016-11-04 13:41:11 183] (PageObject.java:286) return e.getLocation:(0, 200)
+[ INFO] [2016-11-04 13:41:11 207] (PageObject.java:244) topTag to String [[FirefoxDriver: firefox on WINDOWS (4b95b583-e44e-4af2-96fe-662ea7725dc1)] -> xpath: //*[@id="rootNode"]/li[6]/ul]
+[ INFO] [2016-11-04 13:41:11 247] (PageObject.java:245) topTag getTagName ul
+[ INFO] [2016-11-04 13:41:11 265] (PageObject.java:246) aElement getTagName li
+[ INFO] [2016-11-04 13:41:11 266] (PageObject.java:247) aElement to String [[[[FirefoxDriver: firefox on WINDOWS (4b95b583-e44e-4af2-96fe-662ea7725dc1)] -> id: rootNode]] -> xpath: ./li]
+[ INFO] [2016-11-04 13:41:11 400] (PageObject.java:225) subtag.gettext []
+[ INFO] [2016-11-04 13:41:11 553] (PageObject.java:228) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 13:41:13 581] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 13:41:13 581] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 13:43:29 117] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 13:43:29 120] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 13:43:29 486] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 13:43:29 511] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 13:43:30 207] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 13:43:30 352] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 13:43:30 375] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 13:43:30 412] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 13:43:32 447] (PageObject.java:241) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 13:43:33 376] (PageObject.java:281) top tag get text:乐视金融
+[ INFO] [2016-11-04 13:43:33 425] (PageObject.java:281) top tag get text:名单库
+[ INFO] [2016-11-04 13:43:33 478] (PageObject.java:281) top tag get text:liucx菜单
+[ INFO] [2016-11-04 13:43:33 539] (PageObject.java:281) top tag get text:客户管理
+[ INFO] [2016-11-04 13:43:33 599] (PageObject.java:281) top tag get text:合同管理
+[ INFO] [2016-11-04 13:43:33 707] (PageObject.java:281) top tag get text:项目管理
+[ INFO] [2016-11-04 13:43:33 743] (PageObject.java:284) return e:[[[[FirefoxDriver: firefox on WINDOWS (d0d6c5ca-52e2-4372-85bd-bfe8466eaa16)] -> id: rootNode]] -> xpath: ./li]
+[ INFO] [2016-11-04 13:43:33 763] (PageObject.java:285) return e.getTagName:li
+[ INFO] [2016-11-04 13:43:33 786] (PageObject.java:286) return e.getLocation:(0, 200)
+[ INFO] [2016-11-04 13:43:33 817] (PageObject.java:244) topTag to String [[FirefoxDriver: firefox on WINDOWS (d0d6c5ca-52e2-4372-85bd-bfe8466eaa16)] -> xpath: //*[@id="rootNode"]/li[6]/ul]
+[ INFO] [2016-11-04 13:43:33 859] (PageObject.java:245) topTag getTagName ul
+[ INFO] [2016-11-04 13:43:33 879] (PageObject.java:246) aElement getTagName li
+[ INFO] [2016-11-04 13:43:33 879] (PageObject.java:247) aElement to String [[[[FirefoxDriver: firefox on WINDOWS (d0d6c5ca-52e2-4372-85bd-bfe8466eaa16)] -> id: rootNode]] -> xpath: ./li]
+[ INFO] [2016-11-04 13:43:33 993] (PageObject.java:225) subtag.gettext []
+[ INFO] [2016-11-04 13:43:34 155] (PageObject.java:228) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 13:43:36 178] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 13:43:36 179] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 13:45:49 920] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 13:45:49 924] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 13:45:50 243] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 13:45:50 267] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 13:45:51 150] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 13:45:51 288] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 13:45:51 316] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 13:45:51 343] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 13:45:53 713] (PageObject.java:241) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 13:45:54 724] (PageObject.java:282) top tag get text:乐视金融
+[ INFO] [2016-11-04 13:45:54 776] (PageObject.java:282) top tag get text:名单库
+[ INFO] [2016-11-04 13:45:54 828] (PageObject.java:282) top tag get text:liucx菜单
+[ INFO] [2016-11-04 13:45:54 892] (PageObject.java:282) top tag get text:客户管理
+[ INFO] [2016-11-04 13:45:54 961] (PageObject.java:282) top tag get text:合同管理
+[ INFO] [2016-11-04 13:45:55 079] (PageObject.java:282) top tag get text:项目管理
+[ INFO] [2016-11-04 13:45:55 114] (PageObject.java:285) return e:[[[[FirefoxDriver: firefox on WINDOWS (ac21b9bd-b25b-4a06-aa54-28b27c5d9be5)] -> id: rootNode]] -> xpath: ./li]
+[ INFO] [2016-11-04 13:45:55 136] (PageObject.java:286) return e.getTagName:li
+[ INFO] [2016-11-04 13:45:55 155] (PageObject.java:287) return e.getLocation:(0, 200)
+[ INFO] [2016-11-04 13:45:55 185] (PageObject.java:244) topTag to String [[FirefoxDriver: firefox on WINDOWS (ac21b9bd-b25b-4a06-aa54-28b27c5d9be5)] -> xpath: //*[@id="rootNode"]/li[6]/ul]
+[ INFO] [2016-11-04 13:45:55 244] (PageObject.java:245) topTag getTagName ul
+[ INFO] [2016-11-04 13:45:55 266] (PageObject.java:246) aElement getTagName li
+[ INFO] [2016-11-04 13:45:55 267] (PageObject.java:247) aElement to String [[[[FirefoxDriver: firefox on WINDOWS (ac21b9bd-b25b-4a06-aa54-28b27c5d9be5)] -> id: rootNode]] -> xpath: ./li]
+[ INFO] [2016-11-04 13:45:55 384] (PageObject.java:225) subtag.gettext []
+[ INFO] [2016-11-04 13:45:55 639] (PageObject.java:228) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 13:45:57 692] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 13:45:57 694] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 13:55:49 518] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 13:55:49 522] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 13:55:49 837] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 13:55:49 867] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 13:55:50 482] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 13:55:50 611] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 13:55:50 636] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 13:55:50 664] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 13:56:47 171] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 13:56:47 175] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 13:56:47 416] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 13:56:47 429] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 13:56:48 095] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 13:56:48 222] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 13:56:48 244] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 13:56:48 271] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 13:56:50 325] (PageObject.java:240) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 13:56:51 331] (PageObject.java:261) top tag get text:乐视金融
+[ INFO] [2016-11-04 13:56:51 376] (PageObject.java:261) top tag get text:liucx菜单
+[ INFO] [2016-11-04 13:56:51 423] (PageObject.java:261) top tag get text:名单库
+[ INFO] [2016-11-04 13:56:51 478] (PageObject.java:261) top tag get text:客户管理
+[ INFO] [2016-11-04 13:56:51 538] (PageObject.java:261) top tag get text:合同管理
+[ INFO] [2016-11-04 13:56:51 599] (PageObject.java:261) top tag get text:项目管理
+[ INFO] [2016-11-04 13:56:51 805] (PageObject.java:225) subtag.gettext []
+[ INFO] [2016-11-04 13:56:51 952] (PageObject.java:228) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 13:56:53 975] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 13:56:53 975] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 13:58:34 199] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 13:58:34 205] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 13:58:34 514] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 13:58:34 533] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 13:58:35 393] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 13:58:35 528] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 13:58:35 556] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 13:58:35 581] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 13:58:37 864] (PageObject.java:240) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 13:58:38 833] (PageObject.java:261) top tag get text:乐视金融
+[ INFO] [2016-11-04 13:58:38 881] (PageObject.java:261) top tag get text:liucx菜单
+[ INFO] [2016-11-04 13:58:38 931] (PageObject.java:261) top tag get text:名单库
+[ INFO] [2016-11-04 13:58:38 986] (PageObject.java:261) top tag get text:客户管理
+[ INFO] [2016-11-04 13:58:39 043] (PageObject.java:261) top tag get text:合同管理
+[ INFO] [2016-11-04 13:58:39 107] (PageObject.java:261) top tag get text:项目管理
+[ INFO] [2016-11-04 13:58:39 305] (PageObject.java:225) subtag.getText 项目批量录入
+[ INFO] [2016-11-04 13:58:39 453] (PageObject.java:228) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 13:58:41 478] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 13:58:41 478] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 14:01:37 387] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 14:01:37 390] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 14:01:37 669] (LoadPageViaPageSource.java:30) Page loaded.
+[ INFO] [2016-11-04 14:01:37 686] (LoginPage.java:29) Init the Class [com.lejr.cms.modules.login.LoginPage].
+[ INFO] [2016-11-04 14:01:37 895] (LoginPage.java:45) Input login name = [admin] and passwd = [1qaz2wsx].
+[ INFO] [2016-11-04 14:01:38 012] (LoginPage.java:47) Click the login button.
+[ INFO] [2016-11-04 14:01:38 034] (LoginPage.java:52) Login success.
+[ INFO] [2016-11-04 14:01:38 060] (LoadPageViaJsStatus.java:19) Page loaded.
+[ INFO] [2016-11-04 14:01:40 119] (PageObject.java:240) Switch to frame [nav_frame].
+[ INFO] [2016-11-04 14:01:41 088] (PageObject.java:253) top tag get text:乐视金融
+[ INFO] [2016-11-04 14:01:41 136] (PageObject.java:253) top tag get text:名单库
+[ INFO] [2016-11-04 14:01:41 183] (PageObject.java:253) top tag get text:liucx菜单
+[ INFO] [2016-11-04 14:01:41 238] (PageObject.java:253) top tag get text:客户管理
+[ INFO] [2016-11-04 14:01:41 299] (PageObject.java:253) top tag get text:合同管理
+[ INFO] [2016-11-04 14:01:41 411] (PageObject.java:253) top tag get text:项目管理
+[ INFO] [2016-11-04 14:01:41 562] (PageObject.java:225) subtag.getText 项目批量录入
+[ INFO] [2016-11-04 14:01:41 706] (PageObject.java:228) Click the subtag [项目批量录入].
+[ INFO] [2016-11-04 14:01:41 729] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 14:01:41 729] (LogUtil.java:16) ********************************************************************
+[ INFO] [2016-11-04 16:33:59 867] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 16:33:59 870] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ERROR] [2016-11-04 16:34:00 613] (ReadXlsx.java:28) The sheet named productData is null
+[ INFO] [2016-11-04 16:34:39 787] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 16:34:39 791] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 16:34:40 390] (ReadXlsx.java:60) Loop title projectTypeSele
+[ INFO] [2016-11-04 16:34:40 391] (ReadXlsx.java:60) Loop title inputModeSele
+[ INFO] [2016-11-04 16:34:40 391] (ReadXlsx.java:60) Loop title isTransactionPublishSele
+[ INFO] [2016-11-04 16:34:40 392] (ReadXlsx.java:60) Loop title venderCodeSele
+[ INFO] [2016-11-04 16:34:40 392] (ReadXlsx.java:60) Loop title merchantCodeSele
+[ INFO] [2016-11-04 16:34:40 392] (ReadXlsx.java:60) Loop title financeTypeSele
+[ INFO] [2016-11-04 16:34:40 393] (ReadXlsx.java:60) Loop title isSpvSele
+[ INFO] [2016-11-04 16:34:40 393] (ReadXlsx.java:60) Loop title companyCodeSele
+[ INFO] [2016-11-04 16:34:40 394] (ReadXlsx.java:60) Loop title productStartNumInput
+[ INFO] [2016-11-04 16:34:40 395] (ReadXlsx.java:60) Loop title productStartCodeInput
+[ INFO] [2016-11-04 16:34:40 395] (ReadXlsx.java:60) Loop title productTotalAmountInput
+[ INFO] [2016-11-04 16:34:40 396] (ReadXlsx.java:60) Loop title projectTotalAmountInput
+[ INFO] [2016-11-04 16:34:40 396] (ReadXlsx.java:60) Loop title projectNumInput
+[ INFO] [2016-11-04 16:34:40 397] (ReadXlsx.java:60) Loop title successMinRateInput
+[ INFO] [2016-11-04 16:34:40 399] (ReadXlsx.java:60) Loop title adviceFeeRateInput
+[ INFO] [2016-11-04 16:34:40 400] (ReadXlsx.java:60) Loop title serviceFeeRateInput
+[ INFO] [2016-11-04 16:34:40 400] (ReadXlsx.java:60) Loop title tradingFeeRateInput
+[ INFO] [2016-11-04 16:34:40 401] (ReadXlsx.java:60) Loop title projectNoInput
+[ INFO] [2016-11-04 16:34:40 402] (ReadXlsx.java:60) Loop title minPurchaseAmountInput
+[ INFO] [2016-11-04 16:34:40 402] (ReadXlsx.java:60) Loop title incrementalPurchaseAmountInput
+[ INFO] [2016-11-04 16:34:40 403] (ReadXlsx.java:60) Loop title maxPurchaseAmountInput
+[ INFO] [2016-11-04 16:34:40 403] (ReadXlsx.java:60) Loop title investmentHorizonInput
+[ INFO] [2016-11-04 16:34:40 404] (ReadXlsx.java:60) Loop title incomeCalculationMethodSele
+[ INFO] [2016-11-04 16:34:40 404] (ReadXlsx.java:60) Loop title repayWaySele
+[ INFO] [2016-11-04 16:34:40 404] (ReadXlsx.java:60) Loop title riskRankSele
+[ INFO] [2016-11-04 16:34:40 405] (ReadXlsx.java:60) Loop title recruitStartTimeInput
+[ INFO] [2016-11-04 16:34:40 405] (ReadXlsx.java:60) Loop title recruitEndTimeInput
+[ INFO] [2016-11-04 16:34:40 406] (ReadXlsx.java:60) Loop title dateOfValueInput
+[ INFO] [2016-11-04 16:34:40 406] (ReadXlsx.java:60) Loop title dateOfExpiryInput
+[ INFO] [2016-11-04 16:34:40 406] (ReadXlsx.java:60) Loop title projectPropertis1Sele
+[ INFO] [2016-11-04 16:34:40 407] (ReadXlsx.java:60) Loop title userAnnualRateInput
+[ INFO] [2016-11-04 16:34:40 407] (ReadXlsx.java:60) Loop title isTransferSele
+[ INFO] [2016-11-04 16:35:10 004] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 16:35:10 007] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 16:35:10 592] (ReadXlsx.java:60) Loop title projectTypeSele
+[ INFO] [2016-11-04 16:35:10 592] (ReadXlsx.java:60) Loop title inputModeSele
+[ INFO] [2016-11-04 16:35:10 593] (ReadXlsx.java:60) Loop title isTransactionPublishSele
+[ INFO] [2016-11-04 16:35:10 593] (ReadXlsx.java:60) Loop title venderCodeSele
+[ INFO] [2016-11-04 16:35:10 594] (ReadXlsx.java:60) Loop title merchantCodeSele
+[ INFO] [2016-11-04 16:35:10 594] (ReadXlsx.java:60) Loop title financeTypeSele
+[ INFO] [2016-11-04 16:35:10 595] (ReadXlsx.java:60) Loop title isSpvSele
+[ INFO] [2016-11-04 16:35:10 596] (ReadXlsx.java:60) Loop title companyCodeSele
+[ INFO] [2016-11-04 16:35:10 597] (ReadXlsx.java:60) Loop title productStartNumInput
+[ INFO] [2016-11-04 16:35:10 597] (ReadXlsx.java:60) Loop title productStartCodeInput
+[ INFO] [2016-11-04 16:35:10 598] (ReadXlsx.java:60) Loop title productTotalAmountInput
+[ INFO] [2016-11-04 16:35:10 598] (ReadXlsx.java:60) Loop title projectTotalAmountInput
+[ INFO] [2016-11-04 16:35:10 599] (ReadXlsx.java:60) Loop title projectNumInput
+[ INFO] [2016-11-04 16:35:10 599] (ReadXlsx.java:60) Loop title successMinRateInput
+[ INFO] [2016-11-04 16:35:10 601] (ReadXlsx.java:60) Loop title adviceFeeRateInput
+[ INFO] [2016-11-04 16:35:10 602] (ReadXlsx.java:60) Loop title serviceFeeRateInput
+[ INFO] [2016-11-04 16:35:10 603] (ReadXlsx.java:60) Loop title tradingFeeRateInput
+[ INFO] [2016-11-04 16:35:10 603] (ReadXlsx.java:60) Loop title projectNoInput
+[ INFO] [2016-11-04 16:35:10 604] (ReadXlsx.java:60) Loop title minPurchaseAmountInput
+[ INFO] [2016-11-04 16:35:10 604] (ReadXlsx.java:60) Loop title incrementalPurchaseAmountInput
+[ INFO] [2016-11-04 16:35:10 605] (ReadXlsx.java:60) Loop title maxPurchaseAmountInput
+[ INFO] [2016-11-04 16:35:10 605] (ReadXlsx.java:60) Loop title investmentHorizonInput
+[ INFO] [2016-11-04 16:35:10 605] (ReadXlsx.java:60) Loop title incomeCalculationMethodSele
+[ INFO] [2016-11-04 16:35:10 606] (ReadXlsx.java:60) Loop title repayWaySele
+[ INFO] [2016-11-04 16:35:10 606] (ReadXlsx.java:60) Loop title riskRankSele
+[ INFO] [2016-11-04 16:35:10 607] (ReadXlsx.java:60) Loop title recruitStartTimeInput
+[ INFO] [2016-11-04 16:35:10 607] (ReadXlsx.java:60) Loop title recruitEndTimeInput
+[ INFO] [2016-11-04 16:35:10 608] (ReadXlsx.java:60) Loop title dateOfValueInput
+[ INFO] [2016-11-04 16:35:10 608] (ReadXlsx.java:60) Loop title dateOfExpiryInput
+[ INFO] [2016-11-04 16:35:10 608] (ReadXlsx.java:60) Loop title projectPropertis1Sele
+[ INFO] [2016-11-04 16:35:10 609] (ReadXlsx.java:60) Loop title userAnnualRateInput
+[ INFO] [2016-11-04 16:35:10 609] (ReadXlsx.java:60) Loop title isTransferSele
+[ INFO] [2016-11-04 16:45:47 463] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 16:45:47 466] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 16:45:48 057] (ReadXlsx.java:60) Loop title projectTypeSele
+[ INFO] [2016-11-04 16:45:48 058] (ReadXlsx.java:60) Loop title inputModeSele
+[ INFO] [2016-11-04 16:45:48 058] (ReadXlsx.java:60) Loop title isTransactionPublishSele
+[ INFO] [2016-11-04 16:45:48 058] (ReadXlsx.java:60) Loop title venderCodeSele
+[ INFO] [2016-11-04 16:45:48 059] (ReadXlsx.java:60) Loop title merchantCodeSele
+[ INFO] [2016-11-04 16:45:48 059] (ReadXlsx.java:60) Loop title financeTypeSele
+[ INFO] [2016-11-04 16:45:48 059] (ReadXlsx.java:60) Loop title isSpvSele
+[ INFO] [2016-11-04 16:45:48 060] (ReadXlsx.java:60) Loop title companyCodeSele
+[ INFO] [2016-11-04 16:45:48 061] (ReadXlsx.java:60) Loop title productStartNumInput
+[ INFO] [2016-11-04 16:45:48 061] (ReadXlsx.java:60) Loop title productStartCodeInput
+[ INFO] [2016-11-04 16:45:48 062] (ReadXlsx.java:60) Loop title productTotalAmountInput
+[ INFO] [2016-11-04 16:45:48 062] (ReadXlsx.java:60) Loop title projectTotalAmountInput
+[ INFO] [2016-11-04 16:45:48 063] (ReadXlsx.java:60) Loop title projectNumInput
+[ INFO] [2016-11-04 16:45:48 063] (ReadXlsx.java:60) Loop title successMinRateInput
+[ INFO] [2016-11-04 16:45:48 065] (ReadXlsx.java:60) Loop title adviceFeeRateInput
+[ INFO] [2016-11-04 16:45:48 066] (ReadXlsx.java:60) Loop title serviceFeeRateInput
+[ INFO] [2016-11-04 16:45:48 067] (ReadXlsx.java:60) Loop title tradingFeeRateInput
+[ INFO] [2016-11-04 16:45:48 067] (ReadXlsx.java:60) Loop title projectNoInput
+[ INFO] [2016-11-04 16:45:48 068] (ReadXlsx.java:60) Loop title minPurchaseAmountInput
+[ INFO] [2016-11-04 16:45:48 068] (ReadXlsx.java:60) Loop title incrementalPurchaseAmountInput
+[ INFO] [2016-11-04 16:45:48 069] (ReadXlsx.java:60) Loop title maxPurchaseAmountInput
+[ INFO] [2016-11-04 16:45:48 069] (ReadXlsx.java:60) Loop title investmentHorizonInput
+[ INFO] [2016-11-04 16:45:48 070] (ReadXlsx.java:60) Loop title incomeCalculationMethodSele
+[ INFO] [2016-11-04 16:45:48 070] (ReadXlsx.java:60) Loop title repayWaySele
+[ INFO] [2016-11-04 16:45:48 071] (ReadXlsx.java:60) Loop title riskRankSele
+[ INFO] [2016-11-04 16:45:48 071] (ReadXlsx.java:60) Loop title recruitStartTimeInput
+[ INFO] [2016-11-04 16:45:48 071] (ReadXlsx.java:60) Loop title recruitEndTimeInput
+[ INFO] [2016-11-04 16:45:48 072] (ReadXlsx.java:60) Loop title dateOfValueInput
+[ INFO] [2016-11-04 16:45:48 072] (ReadXlsx.java:60) Loop title dateOfExpiryInput
+[ INFO] [2016-11-04 16:45:48 073] (ReadXlsx.java:60) Loop title projectPropertis1Sele
+[ INFO] [2016-11-04 16:45:48 073] (ReadXlsx.java:60) Loop title userAnnualRateInput
+[ INFO] [2016-11-04 16:45:48 073] (ReadXlsx.java:60) Loop title isTransferSele
+[ INFO] [2016-11-04 16:48:28 464] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 16:48:28 468] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 16:48:29 048] (ReadXlsx.java:55) FirstRow.getLastCellNum 32
+[ INFO] [2016-11-04 16:48:29 053] (ReadXlsx.java:61) Loop title projectTypeSele
+[ INFO] [2016-11-04 16:48:29 054] (ReadXlsx.java:61) Loop title inputModeSele
+[ INFO] [2016-11-04 16:48:29 054] (ReadXlsx.java:61) Loop title isTransactionPublishSele
+[ INFO] [2016-11-04 16:48:29 054] (ReadXlsx.java:61) Loop title venderCodeSele
+[ INFO] [2016-11-04 16:48:29 055] (ReadXlsx.java:61) Loop title merchantCodeSele
+[ INFO] [2016-11-04 16:48:29 055] (ReadXlsx.java:61) Loop title financeTypeSele
+[ INFO] [2016-11-04 16:48:29 055] (ReadXlsx.java:61) Loop title isSpvSele
+[ INFO] [2016-11-04 16:48:29 056] (ReadXlsx.java:61) Loop title companyCodeSele
+[ INFO] [2016-11-04 16:48:29 057] (ReadXlsx.java:61) Loop title productStartNumInput
+[ INFO] [2016-11-04 16:48:29 057] (ReadXlsx.java:61) Loop title productStartCodeInput
+[ INFO] [2016-11-04 16:48:29 058] (ReadXlsx.java:61) Loop title productTotalAmountInput
+[ INFO] [2016-11-04 16:48:29 058] (ReadXlsx.java:61) Loop title projectTotalAmountInput
+[ INFO] [2016-11-04 16:48:29 059] (ReadXlsx.java:61) Loop title projectNumInput
+[ INFO] [2016-11-04 16:48:29 060] (ReadXlsx.java:61) Loop title successMinRateInput
+[ INFO] [2016-11-04 16:48:29 061] (ReadXlsx.java:61) Loop title adviceFeeRateInput
+[ INFO] [2016-11-04 16:48:29 062] (ReadXlsx.java:61) Loop title serviceFeeRateInput
+[ INFO] [2016-11-04 16:48:29 063] (ReadXlsx.java:61) Loop title tradingFeeRateInput
+[ INFO] [2016-11-04 16:48:29 063] (ReadXlsx.java:61) Loop title projectNoInput
+[ INFO] [2016-11-04 16:48:29 063] (ReadXlsx.java:61) Loop title minPurchaseAmountInput
+[ INFO] [2016-11-04 16:48:29 064] (ReadXlsx.java:61) Loop title incrementalPurchaseAmountInput
+[ INFO] [2016-11-04 16:48:29 065] (ReadXlsx.java:61) Loop title maxPurchaseAmountInput
+[ INFO] [2016-11-04 16:48:29 065] (ReadXlsx.java:61) Loop title investmentHorizonInput
+[ INFO] [2016-11-04 16:48:29 065] (ReadXlsx.java:61) Loop title incomeCalculationMethodSele
+[ INFO] [2016-11-04 16:48:29 066] (ReadXlsx.java:61) Loop title repayWaySele
+[ INFO] [2016-11-04 16:48:29 066] (ReadXlsx.java:61) Loop title riskRankSele
+[ INFO] [2016-11-04 16:48:29 067] (ReadXlsx.java:61) Loop title recruitStartTimeInput
+[ INFO] [2016-11-04 16:48:29 067] (ReadXlsx.java:61) Loop title recruitEndTimeInput
+[ INFO] [2016-11-04 16:48:29 068] (ReadXlsx.java:61) Loop title dateOfValueInput
+[ INFO] [2016-11-04 16:48:29 068] (ReadXlsx.java:61) Loop title dateOfExpiryInput
+[ INFO] [2016-11-04 16:48:29 068] (ReadXlsx.java:61) Loop title projectPropertis1Sele
+[ INFO] [2016-11-04 16:48:29 069] (ReadXlsx.java:61) Loop title userAnnualRateInput
+[ INFO] [2016-11-04 16:48:29 069] (ReadXlsx.java:61) Loop title isTransferSele
+[ INFO] [2016-11-04 16:48:29 070] (ReadXlsx.java:63) Return titleList [projectTypeSele, inputModeSele, isTransactionPublishSele, venderCodeSele, merchantCodeSele, financeTypeSele, isSpvSele, companyCodeSele, productStartNumInput, productStartCodeInput, productTotalAmountInput, projectTotalAmountInput, projectNumInput, successMinRateInput, adviceFeeRateInput, serviceFeeRateInput, tradingFeeRateInput, projectNoInput, minPurchaseAmountInput, incrementalPurchaseAmountInput, maxPurchaseAmountInput, investmentHorizonInput, incomeCalculationMethodSele, repayWaySele, riskRankSele, recruitStartTimeInput, recruitEndTimeInput, dateOfValueInput, dateOfExpiryInput, projectPropertis1Sele, userAnnualRateInput, isTransferSele]
+[ INFO] [2016-11-04 16:48:29 070] (ReadXlsx.java:45) Loop content 定期理财
+[ INFO] [2016-11-04 16:48:29 071] (ReadXlsx.java:45) Loop content 批量录入
+[ INFO] [2016-11-04 16:48:29 071] (ReadXlsx.java:45) Loop content 是
+[ INFO] [2016-11-04 16:48:29 072] (ReadXlsx.java:45) Loop content 会计引擎测试
+[ INFO] [2016-11-04 16:48:29 072] (ReadXlsx.java:45) Loop content 测试商户2(勿动)_定期都用这个
+[ INFO] [2016-11-04 16:48:29 072] (ReadXlsx.java:45) Loop content 私募债
+[ INFO] [2016-11-04 16:48:29 073] (ReadXlsx.java:45) Loop content 否
+[ INFO] [2016-11-04 16:48:29 073] (ReadXlsx.java:45) Loop content spv
+[ INFO] [2016-11-04 17:02:57 412] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 17:02:57 417] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 17:02:58 035] (ReadXlsx.java:57) FirstRow.getLastCellNum 32
+[ INFO] [2016-11-04 17:02:58 041] (ReadXlsx.java:64) Loop title projectTypeSele
+[ INFO] [2016-11-04 17:02:58 042] (ReadXlsx.java:64) Loop title inputModeSele
+[ INFO] [2016-11-04 17:02:58 042] (ReadXlsx.java:64) Loop title isTransactionPublishSele
+[ INFO] [2016-11-04 17:02:58 042] (ReadXlsx.java:64) Loop title venderCodeSele
+[ INFO] [2016-11-04 17:02:58 043] (ReadXlsx.java:64) Loop title merchantCodeSele
+[ INFO] [2016-11-04 17:02:58 043] (ReadXlsx.java:64) Loop title financeTypeSele
+[ INFO] [2016-11-04 17:02:58 043] (ReadXlsx.java:64) Loop title isSpvSele
+[ INFO] [2016-11-04 17:02:58 044] (ReadXlsx.java:64) Loop title companyCodeSele
+[ INFO] [2016-11-04 17:02:58 045] (ReadXlsx.java:64) Loop title productStartNumInput
+[ INFO] [2016-11-04 17:02:58 046] (ReadXlsx.java:64) Loop title productStartCodeInput
+[ INFO] [2016-11-04 17:02:58 046] (ReadXlsx.java:64) Loop title productTotalAmountInput
+[ INFO] [2016-11-04 17:02:58 047] (ReadXlsx.java:64) Loop title projectTotalAmountInput
+[ INFO] [2016-11-04 17:02:58 047] (ReadXlsx.java:64) Loop title projectNumInput
+[ INFO] [2016-11-04 17:02:58 049] (ReadXlsx.java:64) Loop title successMinRateInput
+[ INFO] [2016-11-04 17:02:58 050] (ReadXlsx.java:64) Loop title adviceFeeRateInput
+[ INFO] [2016-11-04 17:02:58 051] (ReadXlsx.java:64) Loop title serviceFeeRateInput
+[ INFO] [2016-11-04 17:02:58 051] (ReadXlsx.java:64) Loop title tradingFeeRateInput
+[ INFO] [2016-11-04 17:02:58 052] (ReadXlsx.java:64) Loop title projectNoInput
+[ INFO] [2016-11-04 17:02:58 052] (ReadXlsx.java:64) Loop title minPurchaseAmountInput
+[ INFO] [2016-11-04 17:02:58 053] (ReadXlsx.java:64) Loop title incrementalPurchaseAmountInput
+[ INFO] [2016-11-04 17:02:58 054] (ReadXlsx.java:64) Loop title maxPurchaseAmountInput
+[ INFO] [2016-11-04 17:02:58 054] (ReadXlsx.java:64) Loop title investmentHorizonInput
+[ INFO] [2016-11-04 17:02:58 055] (ReadXlsx.java:64) Loop title incomeCalculationMethodSele
+[ INFO] [2016-11-04 17:02:58 056] (ReadXlsx.java:64) Loop title repayWaySele
+[ INFO] [2016-11-04 17:02:58 056] (ReadXlsx.java:64) Loop title riskRankSele
+[ INFO] [2016-11-04 17:02:58 056] (ReadXlsx.java:64) Loop title recruitStartTimeInput
+[ INFO] [2016-11-04 17:02:58 057] (ReadXlsx.java:64) Loop title recruitEndTimeInput
+[ INFO] [2016-11-04 17:02:58 057] (ReadXlsx.java:64) Loop title dateOfValueInput
+[ INFO] [2016-11-04 17:02:58 058] (ReadXlsx.java:64) Loop title dateOfExpiryInput
+[ INFO] [2016-11-04 17:02:58 058] (ReadXlsx.java:64) Loop title projectPropertis1Sele
+[ INFO] [2016-11-04 17:02:58 059] (ReadXlsx.java:64) Loop title userAnnualRateInput
+[ INFO] [2016-11-04 17:02:58 059] (ReadXlsx.java:64) Loop title isTransferSele
+[ INFO] [2016-11-04 17:02:58 060] (ReadXlsx.java:66) Return titleList [projectTypeSele, inputModeSele, isTransactionPublishSele, venderCodeSele, merchantCodeSele, financeTypeSele, isSpvSele, companyCodeSele, productStartNumInput, productStartCodeInput, productTotalAmountInput, projectTotalAmountInput, projectNumInput, successMinRateInput, adviceFeeRateInput, serviceFeeRateInput, tradingFeeRateInput, projectNoInput, minPurchaseAmountInput, incrementalPurchaseAmountInput, maxPurchaseAmountInput, investmentHorizonInput, incomeCalculationMethodSele, repayWaySele, riskRankSele, recruitStartTimeInput, recruitEndTimeInput, dateOfValueInput, dateOfExpiryInput, projectPropertis1Sele, userAnnualRateInput, isTransferSele]
+[ INFO] [2016-11-04 17:02:58 060] (ReadXlsx.java:47) Loop content 定期理财
+[ INFO] [2016-11-04 17:02:58 061] (ReadXlsx.java:47) Loop content 批量录入
+[ INFO] [2016-11-04 17:02:58 061] (ReadXlsx.java:47) Loop content 是
+[ INFO] [2016-11-04 17:02:58 062] (ReadXlsx.java:47) Loop content 会计引擎测试
+[ INFO] [2016-11-04 17:02:58 062] (ReadXlsx.java:47) Loop content 测试商户2(勿动)_定期都用这个
+[ INFO] [2016-11-04 17:02:58 063] (ReadXlsx.java:47) Loop content 私募债
+[ INFO] [2016-11-04 17:02:58 063] (ReadXlsx.java:47) Loop content 否
+[ INFO] [2016-11-04 17:02:58 064] (ReadXlsx.java:47) Loop content spv
+[ INFO] [2016-11-04 17:02:58 066] (ReadXlsx.java:47) Loop content 100
+[ INFO] [2016-11-04 17:02:58 067] (ReadXlsx.java:47) Loop content 12306
+[ INFO] [2016-11-04 17:02:58 068] (ReadXlsx.java:47) Loop content 9
+[ INFO] [2016-11-04 17:02:58 069] (ReadXlsx.java:47) Loop content 2
+[ INFO] [2016-11-04 17:02:58 069] (ReadXlsx.java:47) Loop content 5
+[ INFO] [2016-11-04 17:02:58 070] (ReadXlsx.java:47) Loop content 1
+[ INFO] [2016-11-04 17:02:58 071] (ReadXlsx.java:47) Loop content 1
+[ INFO] [2016-11-04 17:02:58 072] (ReadXlsx.java:47) Loop content 1
+[ INFO] [2016-11-04 17:02:58 073] (ReadXlsx.java:47) Loop content 1
+[ INFO] [2016-11-04 17:02:58 074] (ReadXlsx.java:47) Loop content 200
+[ INFO] [2016-11-04 17:02:58 075] (ReadXlsx.java:47) Loop content 1
+[ INFO] [2016-11-04 17:02:58 076] (ReadXlsx.java:47) Loop content 1
+[ INFO] [2016-11-04 17:02:58 077] (ReadXlsx.java:47) Loop content 10
+[ INFO] [2016-11-04 17:02:58 077] (ReadXlsx.java:47) Loop content 1
+[ INFO] [2016-11-04 17:02:58 078] (ReadXlsx.java:47) Loop content 单利
+[ INFO] [2016-11-04 17:02:58 080] (ReadXlsx.java:47) Loop content 一次性还本付息
+[ INFO] [2016-11-04 17:02:58 081] (ReadXlsx.java:47) Loop content R1（谨慎型）
+[ INFO] [2016-11-04 17:02:58 082] (ReadXlsx.java:47) Loop content 2016-10-28
+[ INFO] [2016-11-04 17:02:58 082] (ReadXlsx.java:47) Loop content 2016-10-28
+[ INFO] [2016-11-04 17:02:58 083] (ReadXlsx.java:47) Loop content 2016-10-29
+[ INFO] [2016-11-04 17:02:58 083] (ReadXlsx.java:47) Loop content 2016-10-30
+[ INFO] [2016-11-04 17:02:58 084] (ReadXlsx.java:47) Loop content 一般理财
+[ INFO] [2016-11-04 17:02:58 085] (ReadXlsx.java:47) Loop content 99
+[ INFO] [2016-11-04 17:02:58 086] (ReadXlsx.java:47) Loop content 是
+[ INFO] [2016-11-04 17:04:44 517] (LogUtil.java:10) ********************************************************************
+[ INFO] [2016-11-04 17:04:44 520] (LogUtil.java:11) ---------------------- testCreateProduct Start -------------------------
+[ INFO] [2016-11-04 17:04:45 158] (ReadXlsx.java:58) FirstRow.getLastCellNum 32
+[ INFO] [2016-11-04 17:04:45 166] (ReadXlsx.java:65) Loop title projectTypeSele
+[ INFO] [2016-11-04 17:04:45 166] (ReadXlsx.java:65) Loop title inputModeSele
+[ INFO] [2016-11-04 17:04:45 167] (ReadXlsx.java:65) Loop title isTransactionPublishSele
+[ INFO] [2016-11-04 17:04:45 167] (ReadXlsx.java:65) Loop title venderCodeSele
+[ INFO] [2016-11-04 17:04:45 168] (ReadXlsx.java:65) Loop title merchantCodeSele
+[ INFO] [2016-11-04 17:04:45 168] (ReadXlsx.java:65) Loop title financeTypeSele
+[ INFO] [2016-11-04 17:04:45 169] (ReadXlsx.java:65) Loop title isSpvSele
+[ INFO] [2016-11-04 17:04:45 170] (ReadXlsx.java:65) Loop title companyCodeSele
+[ INFO] [2016-11-04 17:04:45 170] (ReadXlsx.java:65) Loop title productStartNumInput
+[ INFO] [2016-11-04 17:04:45 171] (ReadXlsx.java:65) Loop title productStartCodeInput
+[ INFO] [2016-11-04 17:04:45 172] (ReadXlsx.java:65) Loop title productTotalAmountInput
+[ INFO] [2016-11-04 17:04:45 172] (ReadXlsx.java:65) Loop title projectTotalAmountInput
+[ INFO] [2016-11-04 17:04:45 173] (ReadXlsx.java:65) Loop title projectNumInput
+[ INFO] [2016-11-04 17:04:45 174] (ReadXlsx.java:65) Loop title successMinRateInput
+[ INFO] [2016-11-04 17:04:45 175] (ReadXlsx.java:65) Loop title adviceFeeRateInput
+[ INFO] [2016-11-04 17:04:45 176] (ReadXlsx.java:65) Loop title serviceFeeRateInput
+[ INFO] [2016-11-04 17:04:45 177] (ReadXlsx.java:65) Loop title tradingFeeRateInput
+[ INFO] [2016-11-04 17:04:45 177] (ReadXlsx.java:65) Loop title projectNoInput
+[ INFO] [2016-11-04 17:04:45 178] (ReadXlsx.java:65) Loop title minPurchaseAmountInput
+[ INFO] [2016-11-04 17:04:45 178] (ReadXlsx.java:65) Loop title incrementalPurchaseAmountInput
+[ INFO] [2016-11-04 17:04:45 179] (ReadXlsx.java:65) Loop title maxPurchaseAmountInput
+[ INFO] [2016-11-04 17:04:45 191] (ReadXlsx.java:65) Loop title investmentHorizonInput
+[ INFO] [2016-11-04 17:04:45 193] (ReadXlsx.java:65) Loop title incomeCalculationMethodSele
+[ INFO] [2016-11-04 17:04:45 194] (ReadXlsx.java:65) Loop title repayWaySele
+[ INFO] [2016-11-04 17:04:45 199] (ReadXlsx.java:65) Loop title riskRankSele
+[ INFO] [2016-11-04 17:04:45 200] (ReadXlsx.java:65) Loop title recruitStartTimeInput
+[ INFO] [2016-11-04 17:04:45 201] (ReadXlsx.java:65) Loop title recruitEndTimeInput
+[ INFO] [2016-11-04 17:04:45 201] (ReadXlsx.java:65) Loop title dateOfValueInput
+[ INFO] [2016-11-04 17:04:45 201] (ReadXlsx.java:65) Loop title dateOfExpiryInput
+[ INFO] [2016-11-04 17:04:45 202] (ReadXlsx.java:65) Loop title projectPropertis1Sele
+[ INFO] [2016-11-04 17:04:45 202] (ReadXlsx.java:65) Loop title userAnnualRateInput
+[ INFO] [2016-11-04 17:04:45 203] (ReadXlsx.java:65) Loop title isTransferSele
+[ INFO] [2016-11-04 17:04:45 203] (ReadXlsx.java:67) Return titleList [projectTypeSele, inputModeSele, isTransactionPublishSele, venderCodeSele, merchantCodeSele, financeTypeSele, isSpvSele, companyCodeSele, productStartNumInput, productStartCodeInput, productTotalAmountInput, projectTotalAmountInput, projectNumInput, successMinRateInput, adviceFeeRateInput, serviceFeeRateInput, tradingFeeRateInput, projectNoInput, minPurchaseAmountInput, incrementalPurchaseAmountInput, maxPurchaseAmountInput, investmentHorizonInput, incomeCalculationMethodSele, repayWaySele, riskRankSele, recruitStartTimeInput, recruitEndTimeInput, dateOfValueInput, dateOfExpiryInput, projectPropertis1Sele, userAnnualRateInput, isTransferSele]
+[ INFO] [2016-11-04 17:04:45 203] (ReadXlsx.java:43) XssfRow.getLastCellNum 32
+[ INFO] [2016-11-04 17:04:45 204] (ReadXlsx.java:48) Loop content 定期理财
+[ INFO] [2016-11-04 17:04:45 204] (ReadXlsx.java:48) Loop content 批量录入
+[ INFO] [2016-11-04 17:04:45 205] (ReadXlsx.java:48) Loop content 是
+[ INFO] [2016-11-04 17:04:45 205] (ReadXlsx.java:48) Loop content 会计引擎测试
+[ INFO] [2016-11-04 17:04:45 205] (ReadXlsx.java:48) Loop content 测试商户2(勿动)_定期都用这个
+[ INFO] [2016-11-04 17:04:45 206] (ReadXlsx.java:48) Loop content 私募债
+[ INFO] [2016-11-04 17:04:45 206] (ReadXlsx.java:48) Loop content 否
+[ INFO] [2016-11-04 17:04:45 206] (ReadXlsx.java:48) Loop content spv
+[ INFO] [2016-11-04 17:04:45 209] (ReadXlsx.java:48) Loop content 100
+[ INFO] [2016-11-04 17:04:45 210] (ReadXlsx.java:48) Loop content 12306
+[ INFO] [2016-11-04 17:04:45 210] (ReadXlsx.java:48) Loop content 9
+[ INFO] [2016-11-04 17:04:45 211] (ReadXlsx.java:48) Loop content 2
+[ INFO] [2016-11-04 17:04:45 211] (ReadXlsx.java:48) Loop content 5
+[ INFO] [2016-11-04 17:04:45 212] (ReadXlsx.java:48) Loop content 1
+[ INFO] [2016-11-04 17:04:45 213] (ReadXlsx.java:48) Loop content 1
+[ INFO] [2016-11-04 17:04:45 214] (ReadXlsx.java:48) Loop content 1
+[ INFO] [2016-11-04 17:04:45 219] (ReadXlsx.java:48) Loop content 1
+[ INFO] [2016-11-04 17:04:45 220] (ReadXlsx.java:48) Loop content 200
+[ INFO] [2016-11-04 17:04:45 226] (ReadXlsx.java:48) Loop content 1
+[ INFO] [2016-11-04 17:04:45 229] (ReadXlsx.java:48) Loop content 1
+[ INFO] [2016-11-04 17:04:45 230] (ReadXlsx.java:48) Loop content 10
+[ INFO] [2016-11-04 17:04:45 230] (ReadXlsx.java:48) Loop content 1
+[ INFO] [2016-11-04 17:04:45 231] (ReadXlsx.java:48) Loop content 单利
+[ INFO] [2016-11-04 17:04:45 231] (ReadXlsx.java:48) Loop content 一次性还本付息
+[ INFO] [2016-11-04 17:04:45 233] (ReadXlsx.java:48) Loop content R1（谨慎型）
+[ INFO] [2016-11-04 17:04:45 233] (ReadXlsx.java:48) Loop content 2016-10-28
+[ INFO] [2016-11-04 17:04:45 234] (ReadXlsx.java:48) Loop content 2016-10-28
+[ INFO] [2016-11-04 17:04:45 234] (ReadXlsx.java:48) Loop content 2016-10-29
+[ INFO] [2016-11-04 17:04:45 234] (ReadXlsx.java:48) Loop content 2016-10-30
+[ INFO] [2016-11-04 17:04:45 235] (ReadXlsx.java:48) Loop content 一般理财
+[ INFO] [2016-11-04 17:04:45 236] (ReadXlsx.java:48) Loop content 99
+[ INFO] [2016-11-04 17:04:45 237] (ReadXlsx.java:48) Loop content 是
+[ INFO] [2016-11-04 17:04:45 237] (ReadXlsx.java:52) Return dataMap {adviceFeeRateInput=1, productStartNumInput=100, companyCodeSele=spv, userAnnualRateInput=99, isTransactionPublishSele=是, tradingFeeRateInput=1, recruitStartTimeInput=2016-10-28, projectNumInput=5, minPurchaseAmountInput=1, projectTypeSele=定期理财, maxPurchaseAmountInput=10, incrementalPurchaseAmountInput=1, investmentHorizonInput=1, incomeCalculationMethodSele=单利, riskRankSele=R1（谨慎型）, productTotalAmountInput=9, projectPropertis1Sele=一般理财, merchantCodeSele=测试商户2(勿动)_定期都用这个, serviceFeeRateInput=1, venderCodeSele=会计引擎测试, inputModeSele=批量录入, financeTypeSele=私募债, projectNoInput=200, dateOfExpiryInput=2016-10-30, projectTotalAmountInput=2, repayWaySele=一次性还本付息, successMinRateInput=1, recruitEndTimeInput=2016-10-28, isSpvSele=否, productStartCodeInput=12306, dateOfValueInput=2016-10-29, isTransferSele=是}
+[ INFO] [2016-11-04 17:04:45 237] (LogUtil.java:15) ------------------------ Finish ------------------------------------
+[ INFO] [2016-11-04 17:04:45 237] (LogUtil.java:16) ********************************************************************

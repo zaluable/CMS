@@ -1,0 +1,18 @@
+[ERROR] [2016-11-08 11:06:28 438] (PageObject.java:207) can't find the option value = 是 on this element [[FirefoxDriver: firefox on WINDOWS (7162e525-4d8b-42ea-b0ac-f92a5aa816d8)] -> id: isTransactionPublish]
+[ERROR] [2016-11-08 11:06:29 513] (PageObject.java:207) can't find the option value = 会计引擎测试 on this element [[FirefoxDriver: firefox on WINDOWS (7162e525-4d8b-42ea-b0ac-f92a5aa816d8)] -> id: productStartNum]
+[ERROR] [2016-11-08 11:06:29 898] (PageObject.java:207) can't find the option value = 测试商户2(勿动)_定期都用这个 on this element [[FirefoxDriver: firefox on WINDOWS (7162e525-4d8b-42ea-b0ac-f92a5aa816d8)] -> id: merchantCode]
+[ERROR] [2016-11-08 11:06:30 073] (PageObject.java:207) can't find the option value = 私募债 on this element [[FirefoxDriver: firefox on WINDOWS (7162e525-4d8b-42ea-b0ac-f92a5aa816d8)] -> id: financeType]
+[ERROR] [2016-11-08 11:06:32 101] (PageObject.java:207) can't find the option value = 否 on this element [[FirefoxDriver: firefox on WINDOWS (7162e525-4d8b-42ea-b0ac-f92a5aa816d8)] -> id: isSpv]
+[ERROR] [2016-11-08 11:06:32 257] (PageObject.java:207) can't find the option value = spv on this element [[FirefoxDriver: firefox on WINDOWS (7162e525-4d8b-42ea-b0ac-f92a5aa816d8)] -> id: companyCode]
+[ERROR] [2016-11-08 11:06:33 644] (PageObject.java:207) can't find the option value = 单利 on this element [[FirefoxDriver: firefox on WINDOWS (7162e525-4d8b-42ea-b0ac-f92a5aa816d8)] -> id: incomeCalculationMethod]
+[ERROR] [2016-11-08 11:06:33 819] (PageObject.java:207) can't find the option value = 一次性还本付息 on this element [[FirefoxDriver: firefox on WINDOWS (7162e525-4d8b-42ea-b0ac-f92a5aa816d8)] -> id: repayWay]
+[ERROR] [2016-11-08 11:06:34 058] (PageObject.java:207) can't find the option value = R1（谨慎型） on this element [[FirefoxDriver: firefox on WINDOWS (7162e525-4d8b-42ea-b0ac-f92a5aa816d8)] -> id: riskRank]
+[ERROR] [2016-11-08 11:06:34 201] (PageObject.java:207) can't find the option value = 是 on this element [[FirefoxDriver: firefox on WINDOWS (7162e525-4d8b-42ea-b0ac-f92a5aa816d8)] -> id: isTransfer]
+[ERROR] [2016-11-08 11:06:34 623] (PageObject.java:207) can't find the option value = 一般理财 on this element [[FirefoxDriver: firefox on WINDOWS (7162e525-4d8b-42ea-b0ac-f92a5aa816d8)] -> id: projectPropertis1]
+[ERROR] [2016-11-08 11:33:01 149] (PageObject.java:224) can't find the option visibleText = 会计引擎测试 on this element [[FirefoxDriver: firefox on WINDOWS (b46602c9-073f-433c-9807-a9593f2011a5)] -> id: productStartNum]
+[ERROR] [2016-11-08 11:38:08 790] (PageObject.java:225) can't find the option visibleText = 会计引擎测试 on this element [[FirefoxDriver: firefox on WINDOWS (be2f6bdc-1b6b-4176-af2a-3e235d8f4370)] -> id: productStartNum]
+[ERROR] [2016-11-08 11:53:10 946] (ProductCreatePage.java:367) Upload contract fail.
+[ERROR] [2016-11-08 11:55:03 653] (ProductCreatePage.java:368) Upload contract fail.
+[ERROR] [2016-11-08 13:18:08 211] (ProductCreatePage.java:369) Upload contract fail.
+[ERROR] [2016-11-08 13:24:28 867] (ProductCreatePage.java:370) Upload contract fail.
+[ERROR] [2016-11-08 13:29:03 558] (ProductCreatePage.java:370) Upload contract fail.
