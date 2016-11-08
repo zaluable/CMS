@@ -20,9 +20,10 @@ import com.lejr.utils.TimeUtil;
 
 public class ProductCreatePage extends BasePage{
 	private HashMap<String, String> dataMap;
+	public static String productName;
 	private final static String path = "C:\\Users\\zhangxiao3\\Desktop\\product-dataprovider.xlsx";
-//	private final static String contractPath = "contarct\\first.html";
-	private final static String contractPath = "contarct\\TESTTEST.html";
+	private final static String contractPath = "contarct\\first.html";
+
 	private static final Logger logger = LoggerFactory.getLogger(ProductCreatePage.class);
 	private String[] idList = {"recruitStartTime", "recruitEndTime", "dateOfValue", "dateOfExpiry"};
 	public ProductCreatePage(WebDriver d) {
@@ -303,13 +304,16 @@ public class ProductCreatePage extends BasePage{
 	@FindBy(id = "reset_btn")
 	private WebElement resetBut;
 	
+	//
+	@FindBy(xpath = "//button[@i-id='ok']")
+	private WebElement okBut;
 	
-	public void createProduct(){
+	public ProductListPage createProduct(){
 		this.selectOptionByVisibleText(projectTypeSele, dataMap.get("projectTypeSele"));
 		this.selectOptionByVisibleText(inputModeSele, dataMap.get("inputModeSele"));
 		
 		//大包信息
-		String productName = "[TEST]"+TimeUtil.getTimeStamp()+"PROD";
+		productName = "[TEST]"+TimeUtil.getTimeStamp()+"PROD";
 		
 		this.selectOptionByVisibleText(isTransactionPublishSele, dataMap.get("isTransactionPublishSele"));
 		this.selectOptionByVisibleText(venderCodeSele, dataMap.get("venderCodeSele"));
@@ -358,8 +362,8 @@ public class ProductCreatePage extends BasePage{
 		//添加合同
 		File contract = new File(contractPath);
 		logger.info("contract path is {}",contract.getAbsolutePath());
-		file_0But.sendKeys(contract.getAbsolutePath());
-//		file_0But.sendKeys("C:\\Users\\zhangxiao3\\Desktop\\test_data\\contract\\first.html");
+//		file_0But.sendKeys(contract.getAbsolutePath());
+		file_0But.sendKeys("C:\\Users\\zhangxiao3\\Desktop\\test_data\\contract\\first.html");
 		try {
 			new WebDriverWait(driver, 10, 500).until(new ExpectedCondition<Boolean>() {
 				public Boolean apply(WebDriver driver) {
@@ -381,10 +385,10 @@ public class ProductCreatePage extends BasePage{
 		
 		//提交
 		submitBut.click();
+
 		
-		if(isPageSourceContainsDynamic("confirmSubmit()")){
-			this.
-			$(function(){confirmSubmit()})
-		}
+		this.excuteJsFuntion("confirmSubmit");
+		this.clickElementWithJSE(okBut);
+		return new ProductListPage(driver);
 	}
 }

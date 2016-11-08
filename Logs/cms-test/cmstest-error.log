@@ -16,3 +16,358 @@
 [ERROR] [2016-11-08 13:18:08 211] (ProductCreatePage.java:369) Upload contract fail.
 [ERROR] [2016-11-08 13:24:28 867] (ProductCreatePage.java:370) Upload contract fail.
 [ERROR] [2016-11-08 13:29:03 558] (ProductCreatePage.java:370) Upload contract fail.
+[ERROR] [2016-11-08 15:23:34 739] (ProductCreatePage.java:370) Upload contract fail.
+[ERROR] [2016-11-08 15:59:28 717] (ProductCreatePage.java:373) Upload contract fail.
+[ERROR] [2016-11-08 16:07:39 616] (ProductCreatePage.java:373) Upload contract fail.
+[ERROR] [2016-11-08 16:10:42 815] (ProductCreatePage.java:373) Upload contract fail.
+[ERROR] [2016-11-08 16:15:28 407] (ProductCreatePage.java:373) Upload contract fail.
+[ERROR] [2016-11-08 16:16:45 498] (PageObject.java:152) The method isPageSourceContainsDynamic load for string =[functionName] timeout.
+[ERROR] [2016-11-08 16:19:32 855] (PageObject.java:152) The method isPageSourceContainsDynamic load for string =[confirmSubmit();] timeout.
+[ERROR] [2016-11-08 16:21:41 370] (PageObject.java:152) The method isPageSourceContainsDynamic load for string =[confirmSubmit();] timeout.
+[ERROR] [2016-11-08 16:27:55 099] (PageObject.java:152) The method isPageSourceContainsDynamic load for string =[confirmSubmit();] timeout.
+[ERROR] [2016-11-08 16:27:55 107] (PageObject.java:153) Page source is <!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <!-- 页面中的header标签中的内容-->
+<meta charset="utf-8" />
+<title>乐视金融交易平台</title>
+<link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+<script type="text/javascript" src="/static/js/modules/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/static/js/common/common.js"></script>
+<script type="text/javascript" src="/static/js/modules/Day.js"></script></head><body><div id="__calendarPanel" style="position:absolute;visibility:hidden;z-index:99999;background-color:#FFFFFF;border:1px solid #666666;width:200px;height:225px;">
+<iframe name="__calendarIframe" id="__calendarIframe" width="100%" height="100%" scrolling="no" frameborder="0" style="margin:0px;"></iframe>
+</div>
+
+<script>
+
+    $(function(){
+        jQuery.tabMenu(".tab .tab_title a",".tab .tab_cnt","tab_hover");
+    })
+</script>
+
+ <script type="text/javascript" src="/static/js/comPage/project/previewContract.js"></script>
+
+<link href="/static/js/modules/artDialog/css/ui-dialog.css" rel="stylesheet" title="default" type="text/css" />
+<script type="text/javascript" src="/static/js/modules/artDialog/dialog-min.js"></script>
+
+
+  <div class="container">
+      <div class="content">
+        <h1 class="local_area">项目管理 &gt; 项目录入确认页</h1>
+       <div class="border">
+         <h2 class="border_title">合同及交易所信息</h2>
+         <div class="cnt">
+           <div class="cnt_one">
+             <h3>产品名称<i class="red">*</i>：</h3>
+             <p class="cnt_word gray">[TEST]11081627PROD</p>
+           </div>
+           <div class="cnt_one">
+             <h3>是否交易所发行<i class="red">*</i>：</h3>
+             <p class="cnt_word gray"> 是 </p>
+           </div>
+           <div class="cnt_one">
+             <h3>募集总金额<i class="red">*</i>：</h3>
+             <p class="cnt_word gray">9.00 元</p>
+           </div>
+           <div class="cnt_one">
+             <h3>产品供应商<i class="red">*</i>：</h3>
+             <p class="cnt_word gray">200000010151</p>
+           </div>
+		   <div class="cnt_one">
+             <h3>入驻商户<i class="red">*</i>：</h3>
+             <p class="cnt_word gray">测试商户2(勿动)_定期都用这个</p>
+           </div>
+           <div class="cnt_one">
+             <h3>每项目最大募集金额<i class="red">*</i>：</h3>
+             <p class="cnt_word gray">2.00 元</p>
+           </div>
+           <div class="cnt_one">
+             <h3>融资类型<i class="red">*</i>：</h3>
+             <p class="cnt_word gray"> 私募债 
+					</p>
+           </div>
+           <div class="cnt_one">
+             <h3>项目数<i class="red">*</i>：</h3>
+             <p class="cnt_word gray">5</p>
+           </div>
+           <div class="cnt_one">
+             <h3>最低募集比例<i class="red">*</i>：</h3>
+             <p class="cnt_word gray">1%</p>
+           </div>
+		   <div class="cnt_one">
+             <h3>财顾费结算比例<i class="red">*</i>：</h3>
+             <p class="cnt_word gray">1%</p>
+           </div>
+		    <div class="cnt_one">
+             <h3>服务费结算比例<i class="red">*</i>：</h3>
+             <p class="cnt_word gray">1%</p>
+           </div>
+		   <div class="cnt_one">
+             <h3>交易所费用结算比例<i class="red">*</i>：</h3>
+             <p class="cnt_word gray">1%</p>
+           </div>
+		   <div class="cnt_one">
+             <h3>是否使用内部spv<i class="red">*</i>：</h3>
+             <p class="cnt_word gray">
+				 否 			 </p>
+           </div>
+		   <div class="cnt_one">
+             <h3>交易主体<i class="red">*</i>：</h3>
+             <p class="cnt_word gray">
+				 spv
+							 </p>
+           </div>
+         </div>
+       </div> 
+
+       <div class="border">
+         <h2 class="border_title">项目信息</h2>
+         <div class="cnt">
+           <div class="cnt_one">
+             <h3>每项目最低购买金额<i class="red">*</i>：</h3>
+             <p class="cnt_word gray">1.00 元</p>
+           </div>
+           <div class="cnt_one">
+             <h3>募集开始日<i class="red">*</i>：</h3>
+             <p class="cnt_word gray">2016-11-08</p>
+           </div>
+           <div class="cnt_one">
+             <h3>每项目递增购买金额<i class="red">*</i>：</h3>
+             <p class="cnt_word gray">1.00 元</p>
+           </div>
+           <div class="cnt_one">
+             <h3>募集结束日<i class="red">*</i>：</h3>
+             <p class="cnt_word gray">2016-11-08</p>
+           </div>
+           <div class="cnt_one">
+             <h3>每项目最高购买金额<i class="red">*</i>：</h3>
+             <p class="cnt_word gray">10.00 元</p>
+           </div>
+           <div class="cnt_one">
+             <h3>起息日<i class="red">*</i>：</h3>
+             <p class="cnt_word gray">2016-11-09</p>
+           </div>
+           <div class="cnt_one">
+             <h3>收益计算方式<i class="red">*</i>：</h3>
+             <p class="cnt_word gray"> 单利 </p>
+           </div>
+           <div class="cnt_one">
+             <h3>项目期限<i class="red">*</i>：</h3>
+             <p class="cnt_word gray">1天</p>
+           </div>
+           <div class="cnt_one">
+             <h3>收益支付方式<i class="red">*</i>：</h3>
+             <p class="cnt_word gray"> 到期一次还本的方式 </p>
+           </div>
+           <div class="cnt_one">
+             <h3>到期日<i class="red">*</i>：</h3>
+             <p class="cnt_word gray">2016-11-10</p>
+           </div>
+           <div class="cnt_one">
+               <h3>风险评级11<i class="red">*</i>：</h3>
+               <p class="cnt_word gray">                   R1（谨慎型）  </p>
+           </div>
+           <div class="cnt_one">
+                 <h3>是否可以转让<i class="red">*</i>：</h3>
+                 <p class="cnt_word gray">
+                                              是
+                                      </p>
+             </div>
+             <div class="cnt_one" style="width: 780px">
+                 <h3 class="ctn_">上传文件<i class="red">*</i>：</h3>
+                 <div style="float: left">
+                     <ul>
+                                                                               <li>
+                                    <span style="margin-right: 50px" class="gray">
+                                                                                    产品级别
+                                                                                                                    </span>
+                                 <a href="https://jr.letv.com/a1/M00/06/EE/Cm5d0VghjI2AO6dmAAA9qYZkr9o78-slave-html.html" target="_blank" style="margin-right: 30px">first</a>
+                             </li>
+                                              </ul>
+                 </div>
+             </div>
+             <div style="clear: both"></div>
+       </div>
+
+           <div class="border">
+               <div class="clear"></div>
+               <h2 class="border_title">项目属性</h2>
+                                  <div class="border">
+                       <div class="cnt_one">
+                           <h3>
+                               一般理财
+                           </h3>
+                       </div>
+                       <div class="clearfix"></div>
+                       <div id="projectPropertyAndAddition1" class="projectPropertAttr">
+                                                                             </div>
+                   </div>
+                          </div>
+
+       <div class="border">
+         <h2 class="border_title">收益率信息</h2>
+         <div class="cnt">
+           <div class="cnt_one">
+             <h3>是否阶梯利率<i class="red">*</i>：</h3>
+             <p class="cnt_word gray"> 非阶梯收益 </p>
+           </div>
+           <div class="cnt_one">
+             <h3>计息基数<i class="red">*</i>：</h3>
+             <p class="cnt_word gray"> 360 天 </p>
+           </div>
+           <div class="cnt_one">
+             <h3>预期年化收益率<i class="red">*</i>：</h3>
+             <p class="cnt_word gray">99%</p>
+           </div>
+         </div>
+       </div>
+
+       <div class="border">
+         <h2 class="border_title">合同列表</h2>
+         <div class="clear"></div>
+         <div class="tablebox mar20">
+          <table cellspacing="0" cellpadding="0" class="table">
+            <thead>
+              <tr>
+                <th>合同模板</th>
+                <th>合同版本</th>
+                <th>操作</th>
+              </tr>              
+            </thead>
+            <tbody>
+				            </tbody>            
+          </table>
+          <!--<div class="pagelist mar20">
+            <a class="page_gray" href="#">首页</a><a class="page_gray" href="#">上一页</a><i><a href="#">1</a><a class="page_hover" href="#">2</a><a href="#">3</a><a href="#">4</a></i><a href="#">下一页</a><a href="#">末页</a><span>共23页</span>
+          </div>-->
+          <div class="clear"></div>
+        </div>
+       </div>
+
+        <div class="border">
+         <h2 class="border_title">项目介绍</h2>
+         <div class="cnt">
+           <textarea class="text" readonly="">[TEST]11081627PROD项目介绍</textarea>
+         </div>
+       </div> 
+
+        <div class="border">
+         <h2 class="border_title">各项目信息</h2>
+         <div class="clear"></div>
+         <div class="tablebox mar20">
+          <table cellspacing="0" cellpadding="0" class="table">
+            <thead>
+              <tr>
+                <th>序号</th>
+                <th>项目对应产品名称</th>
+                <th>产品名称</th>
+									<th>产品代码</th>
+				                <th>项目名称</th>
+                <th>项目金额（元）</th>
+              </tr>              
+            </thead>
+            <tbody id="projectList">
+									<tr>
+						<td>1</td>
+    				    <td>[TEST]11081627PROD100</td><!--项目对应的产品名称-->
+                        <td>[TEST]11081627PROD</td><!--产品名称-->
+													<td>12306</td><!--产品代码-->
+												<td>[TEST]11081627PROJ200</td><!--项目名称-->
+						<td>2.00</td><!--项目金额-->
+                    </tr>
+									<tr>
+						<td>2</td>
+    				    <td>[TEST]11081627PROD101</td><!--项目对应的产品名称-->
+                        <td>[TEST]11081627PROD</td><!--产品名称-->
+													<td>12307</td><!--产品代码-->
+												<td>[TEST]11081627PROJ201</td><!--项目名称-->
+						<td>2.00</td><!--项目金额-->
+                    </tr>
+									<tr>
+						<td>3</td>
+    				    <td>[TEST]11081627PROD102</td><!--项目对应的产品名称-->
+                        <td>[TEST]11081627PROD</td><!--产品名称-->
+													<td>12308</td><!--产品代码-->
+												<td>[TEST]11081627PROJ202</td><!--项目名称-->
+						<td>2.00</td><!--项目金额-->
+                    </tr>
+									<tr>
+						<td>4</td>
+    				    <td>[TEST]11081627PROD103</td><!--项目对应的产品名称-->
+                        <td>[TEST]11081627PROD</td><!--产品名称-->
+													<td>12309</td><!--产品代码-->
+												<td>[TEST]11081627PROJ203</td><!--项目名称-->
+						<td>2.00</td><!--项目金额-->
+                    </tr>
+									<tr>
+						<td>5</td>
+    				    <td>[TEST]11081627PROD104</td><!--项目对应的产品名称-->
+                        <td>[TEST]11081627PROD</td><!--产品名称-->
+													<td>12310</td><!--产品代码-->
+												<td>[TEST]11081627PROJ204</td><!--项目名称-->
+						<td>1.00</td><!--项目金额-->
+                    </tr>
+				            </tbody>            
+          </table>
+        </div>
+      </div>
+
+        <div class="c_btn bg_red left mr30" onclick="confirmSubmit()">提交</div>
+        <div class="c_btn bg_gray left" onclick="javascript:history.back()">返回</div>
+        <div class="clear"></div>
+      
+
+      </div>
+      <!-- content end -->
+  </div> 
+  <!-- container end -->
+  
+  <script>
+  	// 产品编码
+	var productCode = 602003163278;
+	// 商户编码
+	var venderCode = 200000013640;
+	var userCode='001';
+	//确认提交，修改产品状态
+	function confirmSubmit(){
+		var d = dialog({
+                title: '确认',
+                content: '确认要提交吗？',
+                okValue: '确定',
+                ok: function () {
+    				jQuery.ajax({  
+            			url:'/product/updateProductStatus',// 跳转到 action       
+            			type:'post',
+            			data:{
+							productStatusInt:1,
+							productCode:productCode,
+							venderCode:venderCode,
+							userCode:userCode
+						},
+            			dataType:"json",
+            			cache:false,
+            			success:function(data) {
+                			if(data.result == 'SUCCESS') {
+                				//alert(data.data+"条信息状态更新成功。");
+            					//var venderCode = data.data.product.venderCode;
+            					window.location = '/product/getProductList/1';
+                			}else {
+            					alert("增加产品失败");				
+            				}
+            			}
+            		});		
+    			},
+                cancelValue: '取消',
+                cancel: function () {
+    				
+    			}
+           });
+           d.show();
+	}
+  </script>
+
+
+
+
+ </div></body></html>,str is confirmSubmit();
+[ERROR] [2016-11-08 16:29:44 993] (PageObject.java:67) Can not find the function confirmSubmit()
+[ERROR] [2016-11-08 16:42:55 594] (PageObject.java:68) Can not find the function confirmSubmit
+[ERROR] [2016-11-08 20:12:43 093] (PageObject.java:242) can't find the option visibleText = [TEST]11081713PROD on this element [[ChromeDriver: chrome on XP (416b7dce5263b5488b4082b504d7c942)] -> xpath: //select[@class='s_select productCode']]

@@ -10,6 +10,7 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -55,11 +56,18 @@ public abstract class PageObject {
 		js = null;
 	}
 	
-	public void excuteJsFuntion(String functionName){
-		if(isPageSourceContainsDynamic("functionName")){
+	public boolean excuteJsFuntion(String functionName){
+		boolean flag = false;
+		if(isPageSourceContainsDynamic(functionName)){
 			JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript(script, args)
+			String script = "$(document).ready("+functionName+"());";
+			js.executeScript(script);
+			flag = true;
+			logger.info("The function {} has executed",functionName);
+			return flag;
 		}
+		logger.error("Can not find the function {}",functionName);
+		return false;
 	}
 	
 	public void resetElementStyleAttrToBlock(WebElement element){
@@ -86,6 +94,11 @@ public abstract class PageObject {
 		String script = "var setDate=document.getElementById(\"" + id + "\");setDate.removeAttribute('readonly');";
 		js.executeScript(script);
 		logger.info("The method removeReadOnlyAttr executed done with id = [" + id + "].");
+	}
+	
+	public void waitClickUntilClickable(WebElement e){
+		new WebDriverWait(driver,10).until(ExpectedConditions.elementToBeClickable(e));
+		e.click();
 	}
 
 	public WebElement waitForElementVisible(WebDriver driver, final By locator, long timeOutInSeconds,
@@ -136,17 +149,20 @@ public abstract class PageObject {
 
 	// 保留方法
 	public boolean isPageSourceContainsDynamic(final String str) {
+		boolean flag = false;
 		try {
 			new WebDriverWait(driver, 10, 500).until(new ExpectedCondition<Boolean>() {
 				public Boolean apply(WebDriver driver) {
 					return driver.getPageSource().contains(str);
 				}
 			});
+			flag = true;
+			return flag;
 		} catch (TimeoutException e) {
 			logger.error("The method isPageSourceContainsDynamic load for string =[" + str + "] timeout.");
+			logger.error("Page source is {},str is {}",driver.getPageSource(),str);
 			throw e;
 		}
-		return false;
 	}
 
 	public boolean switchFrame(String attribute, String frameName) {
