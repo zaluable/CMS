@@ -55,6 +55,13 @@ public abstract class PageObject {
 		js = null;
 	}
 	
+	public void excuteJsFuntion(String functionName){
+		if(isPageSourceContainsDynamic("functionName")){
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript(script, args)
+		}
+	}
+	
 	public void resetElementStyleAttrToBlock(WebElement element){
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].style.display='block';",element);
