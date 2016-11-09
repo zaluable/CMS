@@ -10,8 +10,10 @@ import com.lejr.cms.modules.login.LoginPage;
 import com.lejr.cms.modules.productmanage.ProductAuditDetailPage;
 import com.lejr.cms.modules.productmanage.ProductAuditPage;
 import com.lejr.cms.modules.productmanage.ProductCreatePage;
+import com.lejr.cms.modules.productmanage.ProductListPage;
 import com.lejr.cms.modules.productmanage.ProductWapperDetilPage;
 import com.lejr.cms.modules.productmanage.ProductWapperManagerPage;
+import com.lejr.cms.modules.releasemanage.RegularWapperReleasePage;
 import com.lejr.utils.BrowserSelectorUtil;
 import com.lejr.utils.BrowserSelectorUtil.Browser;
 import com.lejr.utils.LogUtil;
@@ -75,6 +77,49 @@ public class MainTest {
 		
 		ProductWapperManagerPage productWapperManagerPage = basePage.navigateToProductWapperManagerPage();
 		productWapperManagerPage.auditWapper();
+		LogUtil.afterTest();
+	}
+	@Test
+	public void testReleaseWapper(){
+		LogUtil.beforeTest("testReleaseWapper");
+		LoginPage loginPage = new LoginPage(driver);
+		BasePage basePage = loginPage.loginSuccess("admin", "1qaz2wsx");
+		RegularWapperReleasePage regularWapperReleasePage = basePage.navigateToRegularWapperReleasePage();
+		regularWapperReleasePage.directlyReleaseWapper();
+	}
+	
+	@Test
+	public void testAll(){
+		LogUtil.beforeTest("testAll");
+		
+		//login page
+		LoginPage loginPage = new LoginPage(driver);
+		BasePage basePage = loginPage.loginSuccess("admin", "1qaz2wsx");
+		
+		//create product
+		ProductCreatePage productCreatePage = basePage.navigateToProductCreatePage();
+		ProductListPage productListPage = productCreatePage.createProduct();
+		
+		//audit product
+		ProductAuditPage productAuditPage = productListPage.navigateToProductAuditPage();
+		ProductAuditDetailPage productAuditDetailPage = productAuditPage.goToAudit();
+		productAuditPage = productAuditDetailPage.auditProduct();
+		
+		//go to wapper page
+		ProductWapperManagerPage productWapperManagerPage = productAuditPage.navigateToProductWapperManagerPage();
+		
+		//create wapper
+		ProductWapperDetilPage productWapperDetilPage = productWapperManagerPage.toCreateWapper();
+		productWapperManagerPage = productWapperDetilPage.createWapper();
+		
+		//audit wapper
+		productWapperManagerPage = productWapperManagerPage.auditWapper();
+		
+		//go to wapper release
+		RegularWapperReleasePage regularWapperReleasePage  = productWapperManagerPage.navigateToRegularWapperReleasePage();
+		
+
+		
 		LogUtil.afterTest();
 	}
 

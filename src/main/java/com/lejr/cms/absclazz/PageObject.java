@@ -218,6 +218,7 @@ public abstract class PageObject {
 		boolean flag = false;
 		List<WebElement> allOptions = element.findElements(By.tagName("option"));
 		for (WebElement option : allOptions) {
+			logger.info("Get the value is {}",option.getAttribute("value"));
 			if (value.equals(option.getAttribute("value"))) {
 				logger.info("Find the option ,which value = [" + value + "].");
 				option.click();

@@ -21,6 +21,11 @@ public class UtilTest {
 		System.err.println(TimeUtil.computerByDayInterval(1));
 		System.err.println(TimeUtil.computerByDayInterval(5));
 	}	
+	@Test
+	public void tesrWapperName(){
+		String name1 = "[TEST]11081713PROD";
+		System.err.println(name1.substring(0, 14)+"WAPPER");
+	}
 	
 
 }

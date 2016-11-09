@@ -25,8 +25,8 @@ public class ProductAuditPage extends BasePage{
 	private WebElement tbody;
 	
 	public ProductAuditDetailPage goToAudit(){
-//		String name = ProductCreatePage.productName;
-		String name = "[TEST]11081713PROD";
+		String name = ProductCreatePage.productName;
+//		String name = "[TEST]11081713PROD";
 
 		List<WebElement> productNames = tbody.findElements(By.xpath("./tr/td[2]"));
 		for(WebElement productName : productNames){

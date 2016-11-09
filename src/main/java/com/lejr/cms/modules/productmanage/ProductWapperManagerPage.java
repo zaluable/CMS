@@ -27,17 +27,29 @@ public class ProductWapperManagerPage extends BasePage {
 
 	@FindBy(xpath = "//tbody")
 	WebElement wapperTable;
+	
+	@FindBy(xpath = "//body/div/div/div/descendant::select")
+	WebElement pagesizeSele;
 
 	public ProductWapperDetilPage toCreateWapper() {
 		this.clickElementWithJSE(createBut);
 		return new ProductWapperDetilPage(driver);
 	}
 
-	public void auditWapper() {
-		String name = "wapper";
+	public ProductWapperManagerPage auditWapper() {
+		this.selectOptionByValue(pagesizeSele, "20");
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String wapperToBeAudit = ProductWapperDetilPage.wapperName;
 		List<WebElement> wapperNames = wapperTable.findElements(By.xpath("./tr/td[2]"));
 		for (WebElement wapperName : wapperNames) {
-			if (wapperName.getText().equals(name)) {
+			if (wapperName.getText().equals(wapperToBeAudit)) {
+				WebElement dispalyCodeTb = wapperName.findElement(By.xpath("./parent::tr[attribute::data-displayname='"+wapperToBeAudit+"']"));
+				String displayCode = dispalyCodeTb.getAttribute("data-displaycode");
 				WebElement wapperAuditBut = wapperName
 						.findElement(By.xpath("./following-sibling::td/descendant::a[attribute::class='aduit_btn ']"));
 				// if(wapperAuditBut.getAttribute(name))
@@ -46,12 +58,21 @@ public class ProductWapperManagerPage extends BasePage {
 				Set<String> handles = driver.getWindowHandles();
 				for (String string : handles) {
 					WebDriver popup = driver.switchTo().window(string);
-					if (popup.getCurrentUrl().contains("602003161745")) {
-						logger.info("HA HA HA");
+					if (popup.getCurrentUrl().contains(displayCode)) {
+						logger.info("Get the popup window url = {}",popup.getCurrentUrl());
+						WebElement passRB = popup.findElement(By.xpath("//input[@type='radio'][@value='1']"));
+						passRB.click();
+						WebElement submitBut = popup.findElement(By.xpath("//form[@id='aduit-form']//descendant::div[attribute::class='s_btn submit_btn']"));
+						submitBut.click();
+						break;
 					}
 				}
+				this.driver = this.driver.switchTo().window(driver.getWindowHandle());
+				return this;
 			}
 		}
+		logger.error("Can not find the wapper name = {}",wapperToBeAudit);
+		return null;
 	}
 
 }

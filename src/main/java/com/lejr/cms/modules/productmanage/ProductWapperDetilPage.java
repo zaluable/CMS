@@ -11,6 +11,7 @@ import com.lejr.cms.basepage.BasePage;
 
 public class ProductWapperDetilPage extends BasePage{
 	private static final Logger logger = LoggerFactory.getLogger(ProductWapperDetilPage.class);
+	public static String wapperName;
 	public ProductWapperDetilPage(WebDriver d) {
 		super(d);
 		PageFactory.initElements(driver, this);	
@@ -36,14 +37,15 @@ public class ProductWapperDetilPage extends BasePage{
 	WebElement submitBut;
 	
 	public ProductWapperManagerPage createWapper(){
-		wapperNameInput.sendKeys("wapper");
+		wapperName = ProductCreatePage.productName.substring(0, 14)+"WAPPER";
+		wapperNameInput.sendKeys(wapperName);
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		this.selectOptionByVisibleText(relativeProductSele, "[TEST]11081713PROD");
+		this.selectOptionByVisibleText(relativeProductSele, ProductCreatePage.productName);
 		selectProjectBut.click();
 		this.waitClickUntilClickable(submitAllProductsBut);
 		this.waitClickUntilClickable(submitBut);

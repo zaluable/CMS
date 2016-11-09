@@ -16,9 +16,10 @@ public class ProductAuditDetailPage extends BasePage{
 		PageFactory.initElements(driver, this);	
 	}
 	
-	public void auditProduct(){
+	public ProductAuditPage auditProduct(){
 		this.excuteJsFuntion("list");
 		this.excuteJsFuntion("auditProduct");
+		return new ProductAuditPage(driver);
 	}
 
 }

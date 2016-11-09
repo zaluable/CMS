@@ -13,6 +13,7 @@ import com.lejr.cms.interfaces.pageload.impl.LoadPageViaJsStatus;
 import com.lejr.cms.modules.productmanage.ProductAuditPage;
 import com.lejr.cms.modules.productmanage.ProductCreatePage;
 import com.lejr.cms.modules.productmanage.ProductWapperManagerPage;
+import com.lejr.cms.modules.releasemanage.RegularWapperReleasePage;
 
 public class BasePage extends PageObject{
 	protected PageLoadInterface pageLoader;
@@ -45,5 +46,10 @@ public class BasePage extends PageObject{
 	public ProductWapperManagerPage navigateToProductWapperManagerPage(){
 		navigateToTargetPage(rootNode, "项目管理", "产品展示包管理",sideBarName, mainWinName);
 		return new ProductWapperManagerPage(this.driver);
+	}
+	
+	public RegularWapperReleasePage navigateToRegularWapperReleasePage(){
+		navigateToTargetPage(rootNode, "发布管理", "定期理财展示包发布",sideBarName, mainWinName);
+		return new RegularWapperReleasePage(this.driver);
 	}
 }
