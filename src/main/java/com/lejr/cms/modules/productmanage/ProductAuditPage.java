@@ -24,7 +24,7 @@ public class ProductAuditPage extends BasePage{
 	@FindBy(xpath = "//*[@id=\"list_area\"]/div/table/tbody")
 	private WebElement tbody;
 	
-	public ProductAuditDetailPage goToAudit(){
+	public ProductAuditDetailPage goToAudit() throws Exception{
 		String name = ProductCreatePage.productName;
 //		String name = "[TEST]11081713PROD";
 

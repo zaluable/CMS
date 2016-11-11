@@ -26,4 +26,10 @@ public class TimeUtil {
 		SimpleDateFormat sdf = new SimpleDateFormat("MMddHHmm");
 		return sdf.format(date);
 	}
+	
+	public static String getTimeStampFull() {
+		Date date = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd-HHmmss");
+		return sdf.format(date);
+	}
 }

@@ -16,6 +16,7 @@ import org.slf4j.LoggerFactory;
 
 import com.lejr.cms.basepage.BasePage;
 import com.lejr.cms.interfaces.dataload.impl.ReadXlsx;
+import com.lejr.utils.ScreenshotUtil;
 import com.lejr.utils.TimeUtil;
 
 public class ProductCreatePage extends BasePage{
@@ -308,7 +309,21 @@ public class ProductCreatePage extends BasePage{
 	@FindBy(xpath = "//button[@i-id='ok']")
 	private WebElement okBut;
 	
+	//		
+	
 	public ProductListPage createProduct(){
+		try {
+			return this.createProductInput();
+		} catch (Exception e) {
+			ScreenshotUtil.screenShot(driver);
+			logger.error("Take login screenshot....");
+			logger.error("Method createProduct error {}",e);
+		}
+		return null;
+	}
+	
+	
+	public ProductListPage createProductInput() throws Exception{
 		this.selectOptionByVisibleText(projectTypeSele, dataMap.get("projectTypeSele"));
 		this.selectOptionByVisibleText(inputModeSele, dataMap.get("inputModeSele"));
 		

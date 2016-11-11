@@ -13,6 +13,7 @@ import com.lejr.cms.absclazz.PageObject;
 import com.lejr.cms.basepage.BasePage;
 import com.lejr.cms.interfaces.PageLoadInterface;
 import com.lejr.cms.interfaces.pageload.impl.LoadPageViaPageSource;
+import com.lejr.utils.ScreenshotUtil;
 
 public class LoginPage extends PageObject{
 	private PageLoadInterface pageLoader;
@@ -43,6 +44,8 @@ public class LoginPage extends PageObject{
 		loginNameInput.sendKeys(name);
 		loginpasswordInput.sendKeys(passwd);
 		logger.info("Input login name = ["+name+"] and passwd = ["+passwd+"].");
+		ScreenshotUtil.screenShot(driver);
+		logger.info("Take login screenshot....");
 		submitBut.click();
 		logger.info("Click the login button.");
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);  
